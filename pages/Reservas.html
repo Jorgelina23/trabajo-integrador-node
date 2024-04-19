@@ -1,99 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon" />
     <title>Bodegón | Lo de Tito</title>
-    <link rel="stylesheet" href="../css/reservas.css">
+    <link rel="stylesheet" href="../css/reservas.css" />
 </head>
+
 <body>
     <header class="header">
         <!--navegador, en el encontraremos los enlaces hacia los diferentes paginas del proyecto. En el primer div: el nombre del bodegon, en el segundo div agrupados los enlaces dentro de una lista desordenada-->
         <h1 class="header-title">Bodegon "Lo de Tito"</h1>
         <nav class="nav">
-                <ul class="nav-links">
-                    <div class="nav-links_section principal">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="Nosotros.html">Nosotros</a></li>
-                        <li><a href="Reservas.html">Reservas</a></li>
-                    </div>
-                    <div class="nav-links_section secundario">
-                        <li><a href="Iniciar_sesion.html">Iniciar Sesión</a></li>
-                        <li><a href="Registro.html">Registrarse</a></li>
-                    </div>
-                </ul>
+            <ul class="nav-links">
+                <div class="nav-links_section principal">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="Reservas.html">Reservas</a></li>
+                </div>
+                <div class="nav-links_section secundario">
+                    <li><a href="Iniciar_sesion.html">Iniciar Sesión</a></li>
+                    <li><a href="Registro.html">Registrarse</a></li>
+                </div>
+            </ul>
         </nav>
     </header>
     <main class="container">
-        <h1 class="reservas-title">Reserva tu mesa</h1>
-        <section class="reservas-container">
-            <aside class="calender">
-                <h2>Calendario</h2>
-            </aside>
-            <div class="tables">
-                <div class="table">
-                    <p>1</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>2</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>3</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>4</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>5</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>6</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>7</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>8</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>9</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>10</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>11</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>12</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>13</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>14</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>15</p>
-                    <span>Elegir esta mesa</span>
-                </div>
+        <form action="" class="form">
+            <h2>Completá el formulario para hacer tu reserva</h2>
+            <label for="">
+                Nombre Completo
+                <input type="text">
+            </label>
+            <label for="">
+                Correo electrónico
+                <input type="text">
+            </label>
+            <label for="">
+                Telefono de Contacto
+                <input type="text">
+            </label>
+            <label for="tableSelector">
+                Elegí una mesa
+                <select name="tableSelector" id="tableSelector">
+                    <option value="">Mesa 1</option>
+                    <option value="">Mesa 2</option>
+                    <option value="">Mesa 3</option>
+                    <option value="">Mesa 4</option>
+                    <option value="">Mesa 5</option>
+                    <option value="">Mesa 6</option>
+                </select>
+            </label>
+
+            <label for="foodSelector" class="foodSelector">
+                <h3>Elegí tu plato</h3>
+                <input type="radio" id="food1" name="foodSelector" value="food1">
+                <label for="food1">
+                    <img src="../assets/imagenes/Delirantes platillos argentinos (2).jpg" alt="Opción 1">
+                </label>
+
+                <input type="radio" id="food2" name="foodSelector" value="food2">
+                <label for="food2">
+                    <img src="../assets/imagenes/Italian Ravioli with Spinach, Artichokes, Capers, Sun-Dried Tomatoes (1).jpg" alt="Opción 2">
+                </label>
+
+                <input type="radio" id="food3" name="foodSelector" value="food3">
+                <label for="food3">
+                    <img src="../assets/imagenes/receta-de-noquis-livianisimos-1900Wx500H.jpeg" alt="Opción 3">
+                </label><br>
+            </label>
+
+            <div class="dateSelector">
+                <label for="">
+                    <input type="date">
+                </label>
+                
+                <label for="">
+                    <select type="date">
+                        <option value="">
+                            Almuerzo
+                        </option>
+                        <option value="">
+                            Merienda
+                        </option>
+                        <option value="">
+                            Cena
+                        </option>
+                </label>
             </div>
-        </section>
+
+            <div class="reservaChoice">
+                <h3>Quién va ir a la reserva?</h3>
+
+                <input type="radio" id="me" name="choice" value="Yo">
+                <label for="me">Yo</label>
+
+                <input type="radio" id="another" name="choice" value="Otra persona">
+                <label for="another">Otra persona</label>
+            </div>
+            <button type="submit">Reservar!</button>
+        </form>
     </main>
 </body>
+
 </html>

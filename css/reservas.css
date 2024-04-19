@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/*
+    - Paleta de colores:
+    #FFF2D8
+    #EAD7BB
+    #BCA37F
+    #113946
+*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+input, select{
+    outline: none;
 }
 
 body {
@@ -21,99 +33,57 @@ body {
     align-items: center;
     gap: 3rem;
     padding: 1rem;
-}
 
-.nav {
-    flex-grow: 1;
-    .nav-links {
-        
-        display: flex;
-        justify-content: space-around;
-        
-
-        .nav-links_section {
+    .nav {
+        flex-grow: 1;
+    
+        .nav-links {
             display: flex;
+            justify-content: space-around;
+    
+            .nav-links_section {
+                display: flex;
+    
+                &>li {
+                    flex-grow: 1;
+                    list-style: none;
+                    padding: 6px 12px;
+                }
+            }
 
-
-            &>li {
+            .principal {
                 flex-grow: 1;
-                list-style: none;
-                padding: 6px 12px;
             }
         }
-
-        .principal {
-            flex-grow: 1;
-        }
-
     }
 }
 
 .container{
-    width: 100%;
-    padding: 2rem;
-    .reservas-title{
-        font-weight: 300;
-        text-align: center;
-    }
-    .reservas-container{
+    width: 95vw;
+    height: 100%;
+    border: 1px solid #111;
+    .form{
+        width: 80vw;
+        height: 85vh;
+        margin: auto;
         display: flex;
-        text-align: center;
-        padding: 1rem;
-        &> .calender{
-            flex-grow: 1;
-            display: flex;
-        };
-        &> .tables{
-            padding: 1rem;
-            border: 1px solid #000;
-            border-radius: 20px;
-            flex-grow: 3;
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(
-                    150px,
-                    1fr
-                )
-            );
-            gap: 1rem;
-            &>.table{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 3rem 0;
-                height: 150px;
-                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/imagenes/mesaRestaurante.jpg');
-                background-repeat: no-repeat;
-                font-size: x-large;
-                background-position: center;
-                background-size: cover;
-                border-radius: 50%;
-                cursor: pointer;
-                color: #fff;
-                transition: all .7s;
-                overflow: hidden;
-                &:hover{
-                    transform: scale(1.1);
-                    
-                    transition: all .5s;
-                    &>span{
-                        transition: all .5s;
-                        transform: scale(1);
-                    }
-                }
-                &>p{
-                    padding: 1rem 0 0;
-                    
-                }
-                &>span{
-                    transform: scale(0);
-                    transition: all .5s;
-                    font-weight: 100;
-                }
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .foodSelector{
+            label > img {
+                width: 150px;
+                aspect-ratio: 16/9;
+            }
+        }
+        .reservaChoice{
+            text-align: center;
+            label{
+                padding-right:1rem;
             }
         }
     }
 }
+
+
+
