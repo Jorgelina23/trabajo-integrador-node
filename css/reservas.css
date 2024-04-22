@@ -48,32 +48,28 @@ body {
     height: max-content;
     display: flex;
     align-items: center;
-    gap: 3rem;
     padding: 1rem;
+    gap:6rem;
 
     .nav {
-        flex-grow: 1;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 20px 0 auto;
 
-        .nav-links {
+        >.nav-links {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
 
 
-            .nav-links_section {
-                display: flex;
-
-                &>li {
-                    flex-grow: 1;
-                    list-style: none;
-                    padding: 6px 12px;
-                }
-            }
-
-            .principal {
-                flex-grow: 1;
+            li:nth-child(4) {
+                background: #0a4e65;
             }
         }
     }
+
 }
 
 .container {
@@ -117,7 +113,7 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            h3 {
+            span {
                 font-weight: 300;
                 border-left: 1px solid #0a4e65;
                 border-right: 1px solid #0a4e65;
@@ -128,173 +124,158 @@ body {
 
             .tableSelector {
                 display: flex;
+                width: 100%;
                 margin-top: 1rem;
-                gap: .5rem;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                position: relative;
+                >select{
+                    width: 30%;
+                }
+                i {
+                    color: #1b6279;
+                    position: absolute;
+                    transform: translateX(9.5rem);
+                }
+            }
 
-                >div {
-                    background-color: #113946;
-                    position: relative;
+
+        }
+
+        .foodSelector {
+            display: flex;
+            gap: .5rem;
+            text-align: center;
+            input{
+                display: inline;
+            }
+
+            label{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                >img {
+                border-radius: 20px;
+                border: 3px solid #113946;
+                width: 100px;
+                aspect-ratio: 16/9;
+                }
+            }
+        }
+
+        .reservasOptions {
+            display: flex;
+            height: 80px;
+            padding: 2.8rem 1rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            border: 2px solid #0a4e65;
+            background: #0a4e653e;
+
+            .dateSelector {
+                display: flex;
+                flex-direction: column;
+                
+                gap: .7rem;
+
+                .dateChoices {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    height: auto;
+                    gap: 1rem;
+                    color: #2282a2;
+                    background: #0a4e65;
+                    padding-right: .3rem;
 
-                    >i {
-                        width: 10px;
-                        position: absolute;
-                        color: #1b6279;
+                    .horarioSelector {
                         display: flex;
-                        right: 10px;
-                        align-items: end;
+                        align-items: center;
+                        gap: .5rem;
+
+                        
                     }
                 }
-
-
             }
 
-            .foodSelector {
+            .reservaChoice {
                 display: flex;
                 flex-direction: column;
-                gap: .5rem;
+                gap: .7rem;
+                justify-content: center;
+                align-items: center;
                 text-align: center;
 
-                .foodsContainer {
-                    display: flex;
-                    gap: 1rem;
-
-                    div {
-                        display: flex;
-                        flex-direction: column-reverse;
-                        gap: .5rem;
-                    }
-                }
-
-                label>img {
-                    border-radius: 20px;
-                    border: 3px solid #113946;
-                    width: 150px;
-                    aspect-ratio: 16/9;
+                label {
+                    padding-right: 1rem;
                 }
             }
-
-            .reservasOptions {
-                display: flex;
-                height: 80px;
-                justify-content: center;
-                align-items: center;
-                gap: 1rem;
-
-
-                .dateSelector {
-                    display: flex;
-                    flex-direction: column;
-
-                    gap: .7rem;
-
-                    .dateChoices {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 2rem;
-
-                        .horarioSelector {
-                            display: flex;
-                            gap: .5rem;
-
-                            >div {
-                                background-color: #113946;
-                                position: relative;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                >i {
-                                    width: 10px;
-                                    position: absolute;
-                                    color: #1b6279;
-                                    display: flex;
-                                    right: 10px;
-                                    align-items: end;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .reservaChoice {
-                    display: flex;
-                    flex-direction: column;
-                    gap: .7rem;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-
-                    label {
-                        padding-right: 1rem;
-                    }
-                }
-            }
-
         }
 
-        button {
-            padding: .5rem 2rem;
-            border-radius: 20px;
-            border: none;
-            outline: none;
-            border: 2px solid #113946;
-            background-color: #11394600;
-            color: #49a7c6;
-            cursor: pointer;
-            transition: all .5s;
-
-            &:hover {
-                background-color: #113946;
-                color: #fff;
-                transition: all .5s;
-            }
-        }
     }
 
-    .table-section {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        padding-top: 3rem;
-        gap: 1rem;
-        background: #07161bbf;
-        border-radius: 10px;
-        color: #eee;
+    button {
+        padding: .5rem 2rem;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        border: 2px solid #113946;
+        background-color: #11394600;
+        color: #49a7c6;
+        cursor: pointer;
+        transition: all .5s;
 
-        h2 {
-            font-weight: 300;
+        &:hover {
+            background-color: #113946;
+            color: #fff;
+            transition: all .5s;
+        }
+    }
+}
+
+.table-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: 1rem;
+    background: #07161bbf;
+    border-radius: 10px;
+    color: #eee;
+
+    h2 {
+        font-weight: 300;
+    }
+
+    .tables {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 50vw;
+        height: max-content;
+        gap: 2rem;
+        padding: 2rem;
+
+        .table {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid #45d31e;
+            background: #45d31e28;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .tables {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 50vw;
-            height: max-content;
-            gap: 2rem;
-            padding: 2rem;
-
-            .table {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                border: 1px solid #45d31e;
-                background: #45d31e28;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .isReserved {
-                border:1px solid #c86c03;
-                background: #c86c0330;
-            }
+        .isReserved {
+            border: 1px solid #c86c03;
+            background: #c86c0330;
         }
     }
 }
