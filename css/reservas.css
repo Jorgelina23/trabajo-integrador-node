@@ -14,8 +14,24 @@
     box-sizing: border-box;
 }
 
-input, select{
+input {
     outline: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #0a4e65;
+    color: #eee;
+    padding: .2rem .3rem;
+}
+
+select {
+
+    border: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: #113946;
+    padding: .2rem 1.5rem .2rem .2rem;
+    color: #ddd;
 }
 
 body {
@@ -29,6 +45,7 @@ body {
 
 .header {
     width: 100%;
+    height: max-content;
     display: flex;
     align-items: center;
     gap: 3rem;
@@ -36,14 +53,15 @@ body {
 
     .nav {
         flex-grow: 1;
-    
+
         .nav-links {
             display: flex;
             justify-content: space-around;
-    
+
+
             .nav-links_section {
                 display: flex;
-    
+
                 &>li {
                     flex-grow: 1;
                     list-style: none;
@@ -58,32 +76,225 @@ body {
     }
 }
 
-.container{
-    width: 95vw;
+.container {
+    width: 100vw;
     height: 100%;
-    border: 1px solid #111;
-    .form{
-        width: 80vw;
-        height: 85vh;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        .foodSelector{
-            label > img {
-                width: 150px;
-                aspect-ratio: 16/9;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    background-image: url("../assets/imagenes/back-reservas.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+        font-weight: 300;
+        padding: 0 0 1rem 0;
+    }
+
+    .form-section {
+        width: 50vw;
+        height: 100%;
+        margin-top: 2rem;
+
+        .form {
+            background: #0b1d23bf;
+            backdrop-filter: blur(2px);
+            border-radius: 10px;
+            text-align: center;
+            padding: 2rem 0;
+            color: #ddd;
+            width: 100%;
+
+            height: max-content;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                font-weight: 300;
+                border-left: 1px solid #0a4e65;
+                border-right: 1px solid #0a4e65;
+                width: max-content;
+                padding: 0 .5rem;
+                margin: .5rem auto 0;
+            }
+
+            .tableSelector {
+                display: flex;
+                margin-top: 1rem;
+                gap: .5rem;
+
+                >div {
+                    background-color: #113946;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    >i {
+                        width: 10px;
+                        position: absolute;
+                        color: #1b6279;
+                        display: flex;
+                        right: 10px;
+                        align-items: end;
+                    }
+                }
+
+
+            }
+
+            .foodSelector {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                text-align: center;
+
+                .foodsContainer {
+                    display: flex;
+                    gap: 1rem;
+
+                    div {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        gap: .5rem;
+                    }
+                }
+
+                label>img {
+                    border-radius: 20px;
+                    border: 3px solid #113946;
+                    width: 150px;
+                    aspect-ratio: 16/9;
+                }
+            }
+
+            .reservasOptions {
+                display: flex;
+                height: 80px;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+
+
+                .dateSelector {
+                    display: flex;
+                    flex-direction: column;
+
+                    gap: .7rem;
+
+                    .dateChoices {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 2rem;
+
+                        .horarioSelector {
+                            display: flex;
+                            gap: .5rem;
+
+                            >div {
+                                background-color: #113946;
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                >i {
+                                    width: 10px;
+                                    position: absolute;
+                                    color: #1b6279;
+                                    display: flex;
+                                    right: 10px;
+                                    align-items: end;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .reservaChoice {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .7rem;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    label {
+                        padding-right: 1rem;
+                    }
+                }
+            }
+
+        }
+
+        button {
+            padding: .5rem 2rem;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            border: 2px solid #113946;
+            background-color: #11394600;
+            color: #49a7c6;
+            cursor: pointer;
+            transition: all .5s;
+
+            &:hover {
+                background-color: #113946;
+                color: #fff;
+                transition: all .5s;
             }
         }
-        .reservaChoice{
-            text-align: center;
-            label{
-                padding-right:1rem;
+    }
+
+    .table-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+        gap: 1rem;
+        background: #07161bbf;
+        border-radius: 10px;
+        color: #eee;
+
+        h2 {
+            font-weight: 300;
+        }
+
+        .tables {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 50vw;
+            height: max-content;
+            gap: 2rem;
+            padding: 2rem;
+
+            .table {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 1px solid #45d31e;
+                background: #45d31e28;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .isReserved {
+                border:1px solid #c86c03;
+                background: #c86c0330;
             }
         }
     }
 }
-
-
-

@@ -7,6 +7,9 @@
     <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon" />
     <title>Bodegón | Lo de Tito</title>
     <link rel="stylesheet" href="../css/reservas.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -22,86 +25,132 @@
                 </div>
                 <div class="nav-links_section secundario">
                     <li><a href="Iniciar_sesion.html">Iniciar Sesión</a></li>
-                    <li><a href="Registro.html">Registrarse</a></li>
                 </div>
             </ul>
         </nav>
     </header>
     <main class="container">
-        <form action="" class="form">
-            <h2>Completá el formulario para hacer tu reserva</h2>
-            <label for="">
-                Nombre Completo
-                <input type="text">
-            </label>
-            <label for="">
-                Correo electrónico
-                <input type="text">
-            </label>
-            <label for="">
-                Telefono de Contacto
-                <input type="text">
-            </label>
-            <label for="tableSelector">
-                Elegí una mesa
-                <select name="tableSelector" id="tableSelector">
-                    <option value="">Mesa 1</option>
-                    <option value="">Mesa 2</option>
-                    <option value="">Mesa 3</option>
-                    <option value="">Mesa 4</option>
-                    <option value="">Mesa 5</option>
-                    <option value="">Mesa 6</option>
-                </select>
-            </label>
-
-            <label for="foodSelector" class="foodSelector">
-                <h3>Elegí tu plato</h3>
-                <input type="radio" id="food1" name="foodSelector" value="food1">
-                <label for="food1">
-                    <img src="../assets/imagenes/Delirantes platillos argentinos (2).jpg" alt="Opción 1">
-                </label>
-
-                <input type="radio" id="food2" name="foodSelector" value="food2">
-                <label for="food2">
-                    <img src="../assets/imagenes/Italian Ravioli with Spinach, Artichokes, Capers, Sun-Dried Tomatoes (1).jpg" alt="Opción 2">
-                </label>
-
-                <input type="radio" id="food3" name="foodSelector" value="food3">
-                <label for="food3">
-                    <img src="../assets/imagenes/receta-de-noquis-livianisimos-1900Wx500H.jpeg" alt="Opción 3">
-                </label><br>
-            </label>
-
-            <div class="dateSelector">
+        <section class="form-section">
+            <form action="" class="form">
+                <h2>Completá el formulario para <br />hacer tu reserva</h2>
                 <label for="">
-                    <input type="date">
+                    Nombre Completo
+                    <input type="text" placeholder="Nombre y Apellido" required />
                 </label>
-                
                 <label for="">
-                    <select type="date">
-                        <option value="">
-                            Almuerzo
-                        </option>
-                        <option value="">
-                            Merienda
-                        </option>
-                        <option value="">
-                            Cena
-                        </option>
+                    Correo electrónico
+                    <input type="text" placeholder="example@gmail.com" required />
                 </label>
+                <label for="">
+                    Telefono de Contacto
+                    <input type="text" placeholder="11-1111-1111" required />
+                </label>
+                <label for="tableSelector" class="tableSelector">
+                    <p>Elegí una mesa:</p>
+                    <div>
+                        <select name="tableSelector" id="tableSelector" required>
+                            <option value="mesa1">Mesa 1</option>
+                            <option value="mesa2">Mesa 2</option>
+                            <option value="mesa3" disabled>Mesa 3</option>
+                            <option value="mesa4">Mesa 4</option>
+                            <option value="mesa5" disabled>Mesa 5</option>
+                            <option value="mesa6">Mesa 6</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </label>
+
+                <label for="foodSelector" class="foodSelector">
+                    <h3>Elegí tu plato</h3>
+                    <div class="foodsContainer">
+                        <div>
+                            <input type="radio" id="food1" name="foodSelector" value="food1" />
+                            <label for="food1">
+                                <p>Asado</p>
+                                <img src="../assets/imagenes/Delirantes platillos argentinos (2).jpg" alt="Opción 1" />
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="food2" name="foodSelector" value="food2" />
+                            <label for="food2">
+                                <p>Ravioles de Cerdo</p>
+                                <img src="../assets/imagenes/Italian Ravioli with Spinach, Artichokes, Capers, Sun-Dried Tomatoes (1).jpg"
+                                    alt="Opción 2" />
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="food3" name="foodSelector" value="food3" />
+                            <label for="food3">
+                                <p>Ñoquis</p>
+                                <img src="../assets/imagenes/receta-de-noquis-livianisimos-1900Wx500H.jpeg"
+                                    alt="Opción 3" />
+                            </label>
+                        </div>
+                    </div>
+                </label>
+
+                <div class="reservasOptions">
+                    <div class="dateSelector">
+                        <h3>Dia y horario de la reserva</h3>
+                        <div class="dateChoices">
+                            <label for="fechaReserva">
+                                <input type="date" name="fechaReserva" id="fechaReserva" required />
+                            </label>
+
+                            <label for="horarioReserva" class="horarioSelector">
+                                <div>
+                                    <select name="horarioReserva" id="horarioReserva" required>
+                                        <option value="12:00">Almuerzo</option>
+                                        <option value="17:00">Merienda</option>
+                                        <option value="21:00">Cena</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="reservaChoice">
+                        <h3>Quién va ir a la reserva?</h3>
+
+                        <div class="choices">
+                            <input type="radio" id="me" name="choice" value="Yo" />
+                            <label for="me">Yo</label>
+
+                            <input type="radio" id="another" name="choice" value="Otra persona" />
+                            <label for="another">Otra persona</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">Reservar!</button>
+            </form>
+        </section>
+        <section class="table-section">
+            <h2>Disponibilidad de las mesas</h2>
+            <div class="tables">
+                <div class="table isReserved">Mesa 1
+                    <b4 />Disponible
+                </div>
+                <div class="table isReserved">Mesa 2
+                    <b4 />Disponible
+                </div>
+                <div class="table isReserved">Mesa 3
+                    <b4 />Reservado, lo siento
+                </div>
+                <div class="table">Mesa 4
+                    <b4 />Disponible
+                </div>
+                <div class="table isReserved">Mesa 5
+                    <b4 />Reservado, lo siento
+                </div>
+                <div class="table">Mesa 6
+                    <b4 />Disponible
+                </div>
             </div>
-
-            <div class="reservaChoice">
-                <h3>Quién va ir a la reserva?</h3>
-
-                <input type="radio" id="me" name="choice" value="Yo">
-                <label for="me">Yo</label>
-
-                <input type="radio" id="another" name="choice" value="Otra persona">
-                <label for="another">Otra persona</label>
-            </div>
-            <button type="submit">Reservar!</button>
-        </form>
+        </section>
     </main>
 </body>
 
