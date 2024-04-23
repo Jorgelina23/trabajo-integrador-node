@@ -1,99 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon" >
     <title>Bodegón | Lo de Tito</title>
-    <link rel="stylesheet" href="../css/reservas.css">
+    <link rel="stylesheet" href="../css/reservas.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" >
 </head>
+
 <body>
     <header class="header">
         <!--navegador, en el encontraremos los enlaces hacia los diferentes paginas del proyecto. En el primer div: el nombre del bodegon, en el segundo div agrupados los enlaces dentro de una lista desordenada-->
         <h1 class="header-title">Bodegon "Lo de Tito"</h1>
         <nav class="nav">
-                <ul class="nav-links">
-                    <div class="nav-links_section principal">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="Nosotros.html">Nosotros</a></li>
-                        <li><a href="Reservas.html">Reservas</a></li>
-                    </div>
-                    <div class="nav-links_section secundario">
-                        <li><a href="Iniciar_sesion.html">Iniciar Sesión</a></li>
-                        <li><a href="Registro.html">Registrarse</a></li>
-                    </div>
-                </ul>
+            <ul class="nav-links">
+                
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="Reservas.html">Reservas</a></li>
+                
+                
+                    
+                
+            </ul>
+            <a href="#">Ingresar</a>
         </nav>
     </header>
     <main class="container">
-        <h1 class="reservas-title">Reserva tu mesa</h1>
-        <section class="reservas-container">
-            <aside class="calender">
-                <h2>Calendario</h2>
-            </aside>
+        <section class="form-section">
+            <form action="javascript:void(0)" class="form">
+
+                <h2>Completá el formulario para <br >hacer tu reserva</h2>
+                <label for="name">
+                    Nombre Completo
+                    <input type="text" name="name" id="name" placeholder="Nombre y Apellido" required >
+                </label>
+                <label for="email">
+                    Correo electrónico
+                    <input type="text" name="email" id="email" placeholder="example@gmail.com" required >
+                </label>
+                <label for="phone">
+                    Telefono de Contacto
+                    <input type="text" name="phone" id="phone" placeholder="11-1111-1111" required >
+                </label>
+                <label for="tableSelector" class="tableSelector">
+                    Elegí una mesa:
+                    
+                        <select name="tableSelector" id="tableSelector" required>
+                            <option value="" disabled selected hidden>Seleccione una opción</option>
+                            <option value="mesa1">Mesa 1</option>
+                            <option value="mesa2">Mesa 2</option>
+                            <option value="mesa3" disabled>Mesa 3</option>
+                            <option value="mesa4">Mesa 4</option>
+                            <option value="mesa5" disabled>Mesa 5</option>
+                            <option value="mesa6">Mesa 6</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    
+                </label>
+                <h3>Elegí tu plato</h3>
+                <div class="foodSelector">
+                    
+                            <input type="radio" name="foodSelector" id="food1" value="food1" >
+                            <label for="food1">
+                                <span>Asado</span>
+                                <img src="../assets/imagenes/platillosArgentinos.jpg" alt="Opción 1" >
+                            </label>
+                        
+
+                        
+                            <input type="radio" name="foodSelector" id="food2" value="food2" >
+                            <label for="food2">
+                                <span>Ravioles de <br> Cerdo</span>
+                                <img src="../assets/imagenes/italianRavioli.jpg"
+                                    alt="Opción 2" >
+                            </label>
+                        
+
+                        
+                            <input type="radio" name="foodSelector" id="food3" value="food3" >
+                            <label for="food3">
+                                <span>Ñoquis</span>
+                                <img src="../assets/imagenes/receta-de-noquis-livianisimos-1900Wx500H.jpeg"
+                                    alt="Opción 3" >
+                            </label>
+                </div>
+
+                <div class="reservasOptions">
+                    <div class="dateSelector">
+                        <span>Dia y horario de la reserva</span>
+                        <div class="dateChoices">
+                            <label for="fechaReserva">
+                                <input type="date" name="fechaReserva" id="fechaReserva" required >
+                            </label>
+
+                            <label for="horarioReserva" class="horarioSelector">
+                                
+                                    <select name="horarioReserva" id="horarioReserva" required>
+                                        <option value="" disabled selected hidden>Seleccione una opción</option>
+                                        <option value="12:00">Almuerzo</option>
+                                        <option value="17:00">Merienda</option>
+                                        <option value="21:00">Cena</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="reservaChoice">
+                        <span>Quién va ir a la reserva?</span>
+
+                        <div class="choices">
+                            <input type="radio" id="me" name="choice" value="Yo" >
+                            <label for="me">Yo</label>
+
+                            <input type="radio" id="another" name="choice" value="Otra persona" >
+                            <label for="another">Otra persona</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">Reservar!</button>
+            </form>
+        </section>
+        <section class="table-section">
+            <h2>Disponibilidad de las mesas</h2>
             <div class="tables">
-                <div class="table">
-                    <p>1</p>
-                    <span>Elegir esta mesa</span>
+                <div class="table ">Mesa 1
+                    <br >Disponible
                 </div>
-                <div class="table">
-                    <p>2</p>
-                    <span>Elegir esta mesa</span>
+                <div class="table ">Mesa 2
+                    <br >Disponible
                 </div>
-                <div class="table">
-                    <p>3</p>
-                    <span>Elegir esta mesa</span>
+                <div class="table isReserved">Mesa 3
+                    <br >Reservado, lo siento
                 </div>
-                <div class="table">
-                    <p>4</p>
-                    <span>Elegir esta mesa</span>
+                <div class="table">Mesa 4
+                    <br >Disponible
                 </div>
-                <div class="table">
-                    <p>5</p>
-                    <span>Elegir esta mesa</span>
+                <div class="table isReserved">Mesa 5
+                    <br >Reservado, lo siento
                 </div>
-                <div class="table">
-                    <p>6</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>7</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>8</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>9</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>10</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>11</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>12</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>13</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>14</p>
-                    <span>Elegir esta mesa</span>
-                </div>
-                <div class="table">
-                    <p>15</p>
-                    <span>Elegir esta mesa</span>
+                <div class="table">Mesa 6
+                    <br >Disponible
                 </div>
             </div>
         </section>
     </main>
 </body>
+
 </html>
