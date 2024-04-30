@@ -8,22 +8,22 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <title>Registro</title>
+  <title>Iniciar sesión</title>
   <!-- Estilos -->
   <link rel="stylesheet"  href="../css/registro.css"/>
 </head>
 <body>
-  <div class="register-container">
-    <h2>Registrarse</h2>
-    <form action="" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="text" name="apellido" placeholder="Apellido" required>
-      <input type="text" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
-      <input type="email" name="email" placeholder="E-mail" required>
+  <div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <form action="procesar_login.php" method="POST">
+      <input type="text" name="usuario" placeholder="Usuario" required>
       <input type="password" name="contrasena" placeholder="Contraseña" required>
-      <input type="password" name="confirmar_contrasena" placeholder="Confirmar Contraseña" required>
-      <input type="submit" value="Registrarse">
+      <input type="submit" value="Iniciar sesión">
     </form>
+    <div class="forgot-password">
+      <a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
+      <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>.</p>
+    </div>
     <div class="btn-cancelar">
       <a href="../index.html">Cancelar</a>
     </div>
