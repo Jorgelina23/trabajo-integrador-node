@@ -244,6 +244,7 @@ body {
     padding-top: 3rem;
     gap: 1rem;
     background: #07161bbf;
+    backdrop-filter: blur(2px);
     border-radius: 10px;
     color: #eee;
 

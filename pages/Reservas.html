@@ -32,7 +32,7 @@
     </header>
     <main class="container">
         <section class="form-section">
-            <form action="javascript:void(0)" class="form">
+            <form action="javascript:void(0)" class="form" id="form">
 
                 <h2>Completá el formulario para <br >hacer tu reserva</h2>
                 <label for="name">
@@ -65,7 +65,7 @@
                 <h3>Elegí tu plato</h3>
                 <div class="foodSelector">
                     
-                            <input type="radio" name="foodSelector" id="food1" value="food1" >
+                            <input type="radio" name="foodSelector" id="food1" value="Asado" >
                             <label for="food1">
                                 <span>Asado</span>
                                 <img src="../assets/imagenes/platillosArgentinos.jpg" alt="Opción 1" >
@@ -73,7 +73,7 @@
                         
 
                         
-                            <input type="radio" name="foodSelector" id="food2" value="food2" >
+                            <input type="radio" name="foodSelector" id="food2" value="Ravioles de Cerdo" >
                             <label for="food2">
                                 <span>Ravioles de <br> Cerdo</span>
                                 <img src="../assets/imagenes/italianRavioli.jpg"
@@ -82,7 +82,7 @@
                         
 
                         
-                            <input type="radio" name="foodSelector" id="food3" value="food3" >
+                            <input type="radio" name="foodSelector" id="food3" value="Ñoquis" >
                             <label for="food3">
                                 <span>Ñoquis</span>
                                 <img src="../assets/imagenes/receta-de-noquis-livianisimos-1900Wx500H.jpeg"
@@ -116,10 +116,10 @@
                         <span>Quién va ir a la reserva?</span>
 
                         <div class="choices">
-                            <input type="radio" id="me" name="choice" value="Yo" >
+                            <input type="radio" id="me" name="personChoice" value="Yo" >
                             <label for="me">Yo</label>
 
-                            <input type="radio" id="another" name="choice" value="Otra persona" >
+                            <input type="radio" id="another" name="personChoice" value="Otra persona" >
                             <label for="another">Otra persona</label>
                         </div>
                     </div>
@@ -152,6 +152,7 @@
             </div>
         </section>
     </main>
+    <script src="../js/reservas.js"></script>
 </body>
 
 </html>
