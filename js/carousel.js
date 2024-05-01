@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     prevBtn.addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      console.log('Holas')
       updateCarousel();
     });
 
