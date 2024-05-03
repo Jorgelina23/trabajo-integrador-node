@@ -41,6 +41,10 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: "Poppins", sans-serif;
+    background-image: url("../assets/imagenes/Bodegon01.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
 }
 
 .header {
@@ -49,7 +53,12 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem;
-    gap:6rem;
+    gap: 6rem;
+    background-color: #113946ca;
+
+    h1{
+        color: #ffF;
+    }
 
     .nav {
         width: 50%;
@@ -57,15 +66,22 @@ body {
         justify-content: space-between;
         margin: 0 20px 0 auto;
 
+        a {
+            text-decoration: none;
+            color: #ffF;
+        }
         >.nav-links {
             display: flex;
             justify-content: center;
             gap: 3rem;
             list-style: none;
 
+            
+
 
             li:nth-child(4) {
                 background: #0a4e65;
+
             }
         }
     }
@@ -81,10 +97,10 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 0 1rem;
-    background-image: url("../assets/imagenes/back-reservas.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    /*background-image: url("../assets/imagenes/Bodegon01.jpeg");
+    /*background-repeat: no-repeat;
+    /*background-size: 100%;
+    /*background-position:top;*/
 
     h2 {
         font-weight: 300;
@@ -130,9 +146,11 @@ body {
                 align-items: center;
                 gap: 2rem;
                 position: relative;
-                >select{
+
+                >select {
                     width: 30%;
                 }
+
                 i {
                     color: #1b6279;
                     position: absolute;
@@ -147,20 +165,22 @@ body {
             display: flex;
             gap: .5rem;
             text-align: center;
-            input{
+
+            input {
                 display: inline;
             }
 
-            label{
+            label {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
                 >img {
-                border-radius: 20px;
-                border: 3px solid #113946;
-                width: 100px;
-                aspect-ratio: 16/9;
+                    border-radius: 20px;
+                    border: 3px solid #113946;
+                    width: 100px;
+                    aspect-ratio: 16/9;
                 }
             }
         }
@@ -179,7 +199,7 @@ body {
             .dateSelector {
                 display: flex;
                 flex-direction: column;
-                
+
                 gap: .7rem;
 
                 .dateChoices {
@@ -197,7 +217,7 @@ body {
                         align-items: center;
                         gap: .5rem;
 
-                        
+
                     }
                 }
             }
