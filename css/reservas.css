@@ -23,8 +23,12 @@ input {
     padding: .2rem .3rem;
 }
 
-select {
+input[type="radio"]{
+    cursor: pointer;
+}
 
+select {
+    cursor: pointer;
     border: none;
     appearance: none;
     outline: none;
@@ -54,7 +58,7 @@ body {
     align-items: center;
     padding: 1rem;
     gap: 6rem;
-    background-color: #113946ca;
+    background-color: #051920ca;
 
     h1{
         color: #ffF;
@@ -66,10 +70,19 @@ body {
         justify-content: space-between;
         margin: 0 20px 0 auto;
 
+        >div{
+            display: flex;
+            gap: 1rem;
+        }
+
         a {
             text-decoration: none;
             color: #ffF;
+            &:hover{
+                color: #cac8c8;
+            }
         }
+        
         >.nav-links {
             display: flex;
             justify-content: center;
@@ -113,7 +126,7 @@ body {
         margin-top: 2rem;
 
         .form {
-            background: #0b1d23bf;
+            background: #0b1d23ea;
             backdrop-filter: blur(2px);
             border-radius: 10px;
             text-align: center;
@@ -263,7 +276,7 @@ body {
     flex-direction: column;
     padding-top: 3rem;
     gap: 1rem;
-    background: #07161bbf;
+    background: #0b1d23ea;
     backdrop-filter: blur(2px);
     border-radius: 10px;
     color: #eee;
