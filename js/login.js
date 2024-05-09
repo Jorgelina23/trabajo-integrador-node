@@ -1,11 +1,14 @@
 class Usuario {
-    constructor(nombre, apellido, fechaNacimiento, email, contrasena, tipoDeUsuario) {
+    constructor(nombre, apellido, fechaNacimiento, email, contrasena,pregunta,respuesta, tipoDeUsuario,isLogueado) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.email = email;
         this.contrasena = contrasena;
+        this.pregunta=pregunta;
+        this.respuesta=respuesta;
         this.tipoDeUsuario = tipoDeUsuario;
+        this.isLogueado = isLogueado;
     }
 
     getNombre() { return this.nombre; }
@@ -43,7 +46,7 @@ class Usuario {
 }
 
 let usuariosRegistrados = []; // Definir usuariosRegistrados fuera de la función handleFormSubmit
-let usuario=new Usuario();
+let usuarioEncontrado=new Usuario();
 function handleFormSubmit(event) {
     event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
     
@@ -60,11 +63,8 @@ function handleFormSubmit(event) {
         alert("¡Logueo exitoso!");
         console.log(obtenerDatosUsuario(email,contrasena,usuariosRegistrados));
         console.log("Ingreso como: "+identificarTipoUsuario(email, contrasena, usuariosRegistrados));
-        if(identificarTipoUsuario(email,contrasena,usuariosRegistrados)==="admin"){
-            //window.location.href = "../index.html";//index dashboard Admin
-        }else{
-            //window.location.href = "../index.html";//index user
-        }
+        obtenerUsuario(email, contrasena, usuariosRegistrados);
+        window.location.href = "../index.html";
     } else {
         // Mostrar mensaje de éxito o realizar otras acciones necesarias
         alert("¡Fracaso en el logueo!. Verificar nuevamente...");
@@ -81,6 +81,11 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     console.log("Usuarios cargados: "+usuariosRegistrados.length)
     imprimirUsuarioCargados(usuariosRegistrados);
+});
+
+// Guarda los datos del usuario en el almacenamiento local al salir de la página
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem('usuarioEncontrado', JSON.stringify(usuarioEncontrado));
 });
 
 function imprimirUsuarioCargados(usuariosRegistrados) {
@@ -110,6 +115,17 @@ function obtenerDatosUsuario(email, contrasena, usuariosRegistrados){
     for (let usuario of usuariosRegistrados) {
         if (usuario.email === email && usuario.contrasena === contrasena) {
             return "Bienvenido "+usuario.nombre +" "+usuario.apellido; // Retorna el Nombre y Apellido del usuario
+        }
+    }
+}
+
+function obtenerUsuario(email, contrasena, usuariosRegistrados){
+    for (let usuario of usuariosRegistrados) {
+        if (usuario.email === email && usuario.contrasena === contrasena) {
+            usuarioEncontrado=usuario;
+            usuarioEncontrado.isLogueado=true;
+            console.log(usuarioEncontrado);
+            return usuarioEncontrado; // Retorna el usuario que se logueo
         }
     }
 }

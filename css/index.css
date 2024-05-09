@@ -133,7 +133,18 @@
     justify-content: space-evenly;
     text-align: center;
 }
+.navbar-brand{
+  margin-left: 5%;
+  font-size:50%;
+}
+ .navbar-nav{
+  margin-right: 7%;
+} 
 
+
+ul.dropdown-menu{
+  background-color: #BCA37F; /* Cambia al color de fondo deseado */
+}
 
 .a{
     text-decoration: none;
@@ -147,7 +158,6 @@
   padding-left: 5%;
 }
 .caja2{
-  
     width: 50%;
     display: flex;
     align-items: center;
@@ -155,8 +165,6 @@
     font-size: 1rem; 
     padding-right: 5%;
 }  
-
-
 
 
 .titulo{
@@ -198,6 +206,5 @@ img{
     display: inline-block; /* Hace que los elementos de la lista se muestren uno al lado del otro */
     margin-right: 10px; /* Añade un pequeño margen entre los elementos */
   }
-  
   
   

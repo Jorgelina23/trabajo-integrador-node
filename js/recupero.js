@@ -45,17 +45,12 @@ class Usuario {
     }
 }
 
-// Array para almacenar usuarios registrados
-var usuariosRegistrados = [];
-
-// Función para manejar el evento de envío del formulario
+let usuariosRegistrados = []; // Definir usuariosRegistrados fuera de la función handleFormSubmit
+let usuarioEncontrado=new Usuario();
 function handleFormSubmit(event) {
     event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
     
     // Obtener referencias a los campos de entrada del formulario
-    let nombre = document.querySelector('input[name="nombre"]').value;
-    let apellido = document.querySelector('input[name="apellido"]').value;
-    let fechaNacimiento = document.querySelector('input[name="fecha_nacimiento"]').value;
     let email = document.querySelector('input[name="email"]').value;
     let contrasena = document.querySelector('input[name="contrasena"]').value;
     let confirmarContrasena = document.querySelector('input[name="confirmar_contrasena"]').value;
@@ -63,14 +58,6 @@ function handleFormSubmit(event) {
     let respuesta=document.querySelector('input[name="respuesta"]').value;
 
     // Validar los campos del formulario
-    if (!validarNombreApellido(nombre, apellido)) {
-        alert("Por favor, ingrese un nombre y un apellido válidos.");
-        return false;
-    }
-    if (!validarFecha(fechaNacimiento)) {
-        alert("Por favor, ingrese una fecha de nacimiento válida en formato dd/mm/yyyy.");
-        return false;
-    }
     if (!validarCorreo(email)) {
         alert("Por favor, ingrese un correo electrónico válido.");
         return false;
@@ -88,40 +75,28 @@ function handleFormSubmit(event) {
         alert("Por favor, seleccione una pregunta y una respuesta válidas.");
         return false;
     }
-    if(validarUsuarioUnico(email,usuariosRegistrados)){
-        alert("El correo electrónico ya está en uso");
-    }else{
-        let nuevoUsuario;
-        if(usuariosRegistrados.length === 0){
-            nuevoUsuario = new Usuario("admin", "SuperAdmin", "29/09/1977", "admin@lodetito.com.ar", "admin123","","", "admin",false);
-        } else {
-            nuevoUsuario = new Usuario(nombre, apellido, fechaNacimiento, email, contrasena, pregunta, respuesta,"user",false);
-        }
-        
-        // Agregar el nuevo usuario al array de usuarios registrados
-        usuariosRegistrados.push(nuevoUsuario);
-    
-        // Restablecer el formulario
-        event.target.reset();
-    
-        // Mostrar mensaje de éxito o realizar otras acciones necesarias
-        alert("¡Registro exitoso!");
-        
-        // Redirigir a la página index.html después del registro exitoso
-        window.location.href = "../pages/login.html"; 
-        
-        // Puedes imprimir los usuarios registrados en la consola para verificar
-        console.log("Usuarios registrados:", usuariosRegistrados);
+            
+    // Buscar y actualizar la contraseña del usuario
+    if(!buscarUsuario(email, contrasena, respuesta, usuariosRegistrados)) {
+        // Si no se encuentra el usuario o la respuesta no coincide, mostrar un mensaje de error
+        alert("No se encontró ningún usuario con el correo electrónico proporcionado o la respuesta incorrecta.");
+        return false;
     }
+    
+    // Restablecer el formulario
+    event.target.reset();
+    
+    // Mostrar mensaje de éxito o realizar otras acciones necesarias
+    alert("¡Cambio de contraseña exitoso!");
+    
+    // Redirigir a la página index.html después del cambio de contraseña exitoso
+    window.location.href = "../pages/login.html"; 
+    
+    // Puedes imprimir los usuarios registrados en la consola para verificar
+    console.log("Usuarios registrados:", usuariosRegistrados);
     
     return false; // Retorna false para evitar el envío del formulario
 }
-
-// Función para guardar los datos en el almacenamiento local antes de salir de la página
-window.addEventListener('beforeunload', function() {
-    localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
-    //limpiarUsuarios();
-});
 
 // Recuperar los datos del almacenamiento local al cargar la página
 window.addEventListener('DOMContentLoaded', function() {
@@ -129,39 +104,35 @@ window.addEventListener('DOMContentLoaded', function() {
     if (usuariosRegistradosString) {
         usuariosRegistrados = JSON.parse(usuariosRegistradosString);
     }
+    console.log("Usuarios cargados: "+usuariosRegistrados.length)
+    imprimirUsuarioCargados(usuariosRegistrados);
 });
 
-function validarUsuarioUnico(email, usuariosRegistrados) {
+// Guarda los datos del usuario en el almacenamiento local al salir de la página
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem('usuarioEncontrado', JSON.stringify(usuarioEncontrado));
+});
+
+function asignarPreguntaSeguridad(email) {
+    // Buscar el usuario en el array usuariosRegistrados
     for (let usuario of usuariosRegistrados) {
-        // Verificar si el elemento es una instancia de Usuario
-        if (usuario instanceof Usuario) {
-            if (usuario.getEmail() === email) {
-                return true; // Retorna true si encuentra un usuario con el mismo correo electrónico
-            }
-        } else {
-            console.error("Error: El elemento no es un objeto Usuario");
+        if (usuario.email === email) {
+            // Obtener la pregunta de seguridad del usuario encontrado
+            let preguntaSeguridad = usuario.pregunta;
+
+            // Asignar el valor de la pregunta al elemento select
+            let selectPregunta = document.getElementById("preguntas");
+            selectPregunta.value = preguntaSeguridad;
+
+            // Salir del bucle una vez que se encuentra el usuario
+            return;
         }
     }
-    return false; // Retorna false si no encuentra ningún usuario con el mismo correo electrónico
+
+    // Si no se encuentra el usuario, mostrar un mensaje de error
+    alert("No se encontró ningún usuario con el correo electrónico proporcionado.");
 }
 
-// Función para validar el nombre y apellido
-function validarNombreApellido(nombre, apellido) {
-    // Verificar si el nombre y el apellido no están vacíos
-    if (nombre.trim() === '' || apellido.trim() === '') {
-        return false;
-    }
-    return true;
-}
-
-// Función para validar el formato de fecha (dd/mm/yyyy)
-function validarFecha(fecha) {
-    // Expresión regular para verificar el formato de fecha (dd/mm/yyyy)
-    const regex = /^\d{2}\/\d{2}\/\d{4}$/;
-    return regex.test(fecha);
-}
-
-// Función para validar el formato de correo electrónico
 function validarCorreo(email) {
     // Expresión regular para verificar el formato de correo electrónico
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -196,13 +167,39 @@ function validarPreguntaRespuesta(pregunta, respuesta) {
     return true;
 }
 
-function limpiarUsuarios() {
-    // Limpiar el array de usuarios registrados
-    usuariosRegistrados = [];
-    
-    // Limpiar el almacenamiento local
-    localStorage.removeItem('usuariosRegistrados');
+function imprimirUsuarioCargados(usuariosRegistrados) {
+    for (let usuario of usuariosRegistrados) {
+            console.log(usuario);
+    }
+}
 
-    // Mostrar mensaje de éxito o realizar otras acciones necesarias
-    alert("¡Se han limpiado los usuarios registrados!");
+function buscarUsuario(email, contrasena, respuesta, usuariosRegistrados){
+    for (let usuario of usuariosRegistrados) {
+        if (usuario.email === email && usuario.respuesta === respuesta) {
+            usuario.contrasena = contrasena;
+            // Guardar el array actualizado en el almacenamiento local
+            localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
+            return true; // Retorna true si encuentra y actualiza correctamente la contraseña
+        }
+    }
+    return false; // Retorna false si no encuentra ningún usuario con el mismo correo electrónico y respuesta
+}
+
+function identificarTipoUsuario(email, contrasena, usuariosRegistrados){
+    for (let usuario of usuariosRegistrados) {
+        if (usuario.email === email && usuario.contrasena === contrasena) {
+            return usuario.tipoDeUsuario; // Retorna el tipo de usuario (admin o user)
+        }
+    }
+}
+
+function obtenerUsuario(email, contrasena, usuariosRegistrados){
+    for (let usuario of usuariosRegistrados) {
+        if (usuario.email === email && usuario.contrasena === contrasena) {
+            usuarioEncontrado=usuario;
+            usuarioEncontrado.isLogueado=true;
+            console.log(usuarioEncontrado);
+            return usuarioEncontrado; // Retorna el usuario que se logueo
+        }
+    }
 }
