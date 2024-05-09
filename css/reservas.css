@@ -40,7 +40,8 @@ select {
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -268,48 +269,193 @@ body {
             transition: all .5s;
         }
     }
+
+    .table-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+        gap: 1rem;
+        background: #0b1d23ea;
+        backdrop-filter: blur(2px);
+        border-radius: 10px;
+        color: #eee;
+    
+        h2 {
+            font-weight: 300;
+        }
+    
+        .tables {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 50vw;
+            height: max-content;
+            gap: 2rem;
+            padding: 2rem;
+    
+            .table {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 1px solid #45d31e;
+                background: #45d31e28;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .isReserved {
+                border: 1px solid #c86c03;
+                background: #c86c0330;
+            }
+        }
+    }
 }
 
-.table-section {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding-top: 3rem;
-    gap: 1rem;
-    background: #0b1d23ea;
-    backdrop-filter: blur(2px);
-    border-radius: 10px;
-    color: #eee;
 
-    h2 {
-        font-weight: 300;
-    }
 
-    .tables {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 50vw;
-        height: max-content;
-        gap: 2rem;
-        padding: 2rem;
-
-        .table {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 1px solid #45d31e;
-            background: #45d31e28;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+@media (max-width: 1250px) {
+        .header{
+            h1{
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .nav {
+                font-size: 1rem;
+                font-weight: 200;
+                justify-content: space-between;
+                >ul{
+                    margin-right: 2rem;
+                }
+            }
         }
 
-        .isReserved {
-            border: 1px solid #c86c03;
-            background: #c86c0330;
+    .container {
+    
+        .form-section {
+            width: 48vw;
+    
+            .form {
+    
+                .tableSelector {
+                    gap: 1rem;
+
+                    >select {
+                        width: 45%;
+                        z-index: 1000;
+                        background-color: #113946dd;
+                    }
+    
+                    i {
+                        color: #00bfff;
+                    }
+                }
+            }
+    
+            .reservasOptions {
+                display: flex;
+                flex-direction: column;
+                height:max-content;
+                padding: 1.2rem 1rem;
+    
+                .dateSelector {
+    
+                    .dateChoices {
+    
+                        .horarioSelector {
+                            width: 100%;
+                            z-index: 1000;
+                            >i{
+                                transform: translateX(-1.8rem);
+                                z-index: 1;
+                            }
+    
+                        }
+                    }
+                }
+    
+                .reservaChoice {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .7rem;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+    
+                    label {
+                        padding-right: 1rem;
+                    }
+                }
+            }
+    
+        }
+    
+        button {
+            padding: .5rem 2rem;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            border: 2px solid #113946;
+            background-color: #11394600;
+            color: #49a7c6;
+            cursor: pointer;
+            transition: all .5s;
+    
+            &:hover {
+                background-color: #113946;
+                color: #fff;
+                transition: all .5s;
+            }
+        }
+        
+        .table-section {
+            width: 48vw;
+            height: 100%;
+            margin-top: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-top: 3rem;
+            gap: 1rem;
+            background: #0b1d23ea;
+            backdrop-filter: blur(2px);
+            border-radius: 10px;
+            color: #eee;
+        
+            h2 {
+                font-weight: 300;
+            }
+        
+            .tables {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 50vw;
+                height: max-content;
+                gap: 2rem;
+                padding: 2rem;
+        
+                .table {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    border: 1px solid #45d31e;
+                    background: #45d31e28;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                .isReserved {
+                    border: 1px solid #c86c03;
+                    background: #c86c0330;
+                }
+            }
         }
     }
 }
