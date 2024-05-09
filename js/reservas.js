@@ -7,7 +7,6 @@ let mesasDisponibles = {
     "Mesa5": true,
     "Mesa6": false
 }
-let reservas = []
 
 class Reserva {
     constructor(fullName, email, phone, table, food, date, person){
@@ -28,6 +27,33 @@ function obtenerValorSeleccionado(elements, msj) {
         }
     }
     return alert(msj); // Si ningún elemento está seleccionado
+}
+
+const guardarReserva = reserva => {
+    // Obtener la lista de reservas del localStorage
+    let listaReservasJSON = localStorage.getItem('reservas');
+    let listaReservas = [];
+
+    // Si hay una lista de reservas en el localStorage, convertirla a un arreglo JavaScript
+    if (listaReservasJSON) {
+        listaReservas = JSON.parse(listaReservasJSON);
+    }
+
+    // Agregar la nueva reserva a la lista
+
+    if(listaReservas.some(elemento => elemento.email == reserva.email)){
+            console.log(listaReservas)
+            return alert('Este mail ya tiene una reserva')
+        }
+    else {
+        listaReservas.push(reserva)
+    };
+        
+    
+    
+
+    // Guardar la lista de reservas actualizada en el localStorage
+    localStorage.setItem('reservas', JSON.stringify(listaReservas));
 }
 
 formData.addEventListener('submit', (e) => {
@@ -54,7 +80,9 @@ formData.addEventListener('submit', (e) => {
         return; // Salir de la función si la mesa no está disponible
     }
 
-    let reserva1 = new Reserva(name, mail, phone, table, foodChoice, fecha, personChoice);
+    let newReserva = new Reserva(name, mail, phone, table, foodChoice, fecha, personChoice);
 
-    console.log(reserva1)
-})
+    
+    guardarReserva(newReserva)
+});
+

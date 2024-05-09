@@ -58,6 +58,7 @@ function handleFormSubmit(event) {
     
         // Mostrar mensaje de éxito o realizar otras acciones necesarias
         alert("¡Logueo exitoso!");
+        window.location.href = "../pages/Reservas.html"
         console.log(obtenerDatosUsuario(email,contrasena,usuariosRegistrados));
         console.log("Ingreso como: "+identificarTipoUsuario(email, contrasena, usuariosRegistrados));
         if(identificarTipoUsuario(email,contrasena,usuariosRegistrados)==="admin"){
