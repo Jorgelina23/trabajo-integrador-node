@@ -10,41 +10,7 @@ class Usuario {
         this.tipoDeUsuario = tipoDeUsuario;
         this.isLogueado = isLogueado;
     }
-
-    getNombre() { return this.nombre; }
-    setNombre(nuevoNombre) { this.nombre = nuevoNombre; }
-
-    getApellido() { return this.apellido; }
-    setApellido(nuevoApellido) { this.apellido = nuevoApellido; }
-
-    getFechaNacimiento() { return this.fechaNacimiento; }
-    setFechaNacimiento(nuevaFecha) { this.fechaNacimiento = nuevaFecha; }
-
-    getEmail() { return this.email; }
-
-    getContrasena() { return this.contrasena; }
-    setContrasena(nuevaContrasena) { this.contrasena = nuevaContrasena; }
-
-    getTipoDeUsuario() { return this.tipoDeUsuario; }
-    setTipoDeUsuario(tipoDeUsuario) {
-        // Verificar que el tipoDeUsuario sea "admin" o "user"
-        if (tipoDeUsuario === "admin" || tipoDeUsuario === "user") {
-            this.tipoDeUsuario = tipoDeUsuario;
-        } else {
-            console.error("Error: tipoDeUsuario debe ser 'admin' o 'user'.");
-        }
-    }
-
-    validarContrasena(password) { return this.contrasena === password; }
-
-    mostrarInformacion() {
-        let informacionDelUsuario = `Nombre: ${this.getNombre()} ${this.getApellido()}\n`;
-        informacionDelUsuario += `Fecha de Nacimiento: ${this.getFechaNacimiento()}\n`;
-        informacionDelUsuario += `Correo Electrónico: ${this.getEmail()}`;
-        return informacionDelUsuario;
-    }
 }
-
 // Array para almacenar usuarios registrados
 var usuariosRegistrados = [];
 
@@ -61,6 +27,7 @@ function handleFormSubmit(event) {
     let confirmarContrasena = document.querySelector('input[name="confirmar_contrasena"]').value;
     let pregunta=document.querySelector('select[name="pregunta"]').value;
     let respuesta=document.querySelector('input[name="respuesta"]').value;
+    let tipoUsuario=document.querySelector('select[name="userType"]').value;
 
     // Validar los campos del formulario
     if (!validarNombreApellido(nombre, apellido)) {
@@ -88,6 +55,11 @@ function handleFormSubmit(event) {
         alert("Por favor, seleccione una pregunta y una respuesta válidas.");
         return false;
     }
+    if (!validarTipoUsuario(tipoUsuario)) {
+        alert("Por favor, seleccione el tipo de Usuario.");
+        return false;
+    }
+
     if(validarUsuarioUnico(email,usuariosRegistrados)){
         alert("El correo electrónico ya está en uso");
     }else{
@@ -95,7 +67,7 @@ function handleFormSubmit(event) {
         if(usuariosRegistrados.length === 0){
             nuevoUsuario = new Usuario("admin", "SuperAdmin", "29/09/1977", "admin@lodetito.com.ar", "admin123","","", "admin",false);
         } else {
-            nuevoUsuario = new Usuario(nombre, apellido, fechaNacimiento, email, contrasena, pregunta, respuesta,"user",false);
+            nuevoUsuario = new Usuario(nombre, apellido, fechaNacimiento, email, contrasena, pregunta, respuesta,tipoUsuario,false);
         }
         
         // Agregar el nuevo usuario al array de usuarios registrados
@@ -108,7 +80,7 @@ function handleFormSubmit(event) {
         alert("¡Registro exitoso!");
         
         // Redirigir a la página index.html después del registro exitoso
-        window.location.href = "../pages/login.html"; 
+        window.location.href = "../pages/lista_usuarios.html"; 
         
         // Puedes imprimir los usuarios registrados en la consola para verificar
         console.log("Usuarios registrados:", usuariosRegistrados);
@@ -133,7 +105,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
 function validarUsuarioUnico(email, usuariosRegistrados) {
     for (let usuario of usuariosRegistrados) {
+        // Verificar si el elemento es una instancia de Usuario
         if (usuario.email === email) {
+            console.log("Correo del usuario registrado:", usuario.email);
+            console.log("Correo ingresado:", email);
             return true; // Retorna true si encuentra un usuario con el mismo correo electrónico
         }
     }
@@ -190,14 +165,10 @@ function validarPreguntaRespuesta(pregunta, respuesta) {
     }
     return true;
 }
-
-function limpiarUsuarios() {
-    // Limpiar el array de usuarios registrados
-    usuariosRegistrados = [];
-    
-    // Limpiar el almacenamiento local
-    localStorage.removeItem('usuariosRegistrados');
-
-    // Mostrar mensaje de éxito o realizar otras acciones necesarias
-    alert("¡Se han limpiado los usuarios registrados!");
+function validarTipoUsuario(tipoUsuario) {
+    // Verificar si el tipo de usuario no está vacío
+    if (tipoUsuario.trim() === '') {
+        return false;
+    }
+    return true;
 }

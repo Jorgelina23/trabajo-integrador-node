@@ -86,7 +86,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // Guarda los datos del usuario en el almacenamiento local al salir de la página
 window.addEventListener('beforeunload', function() {
-    localStorage.setItem('usuarioEncontrado', JSON.stringify(usuarioEncontrado));
+    if(usuarioEncontrado.isLogueado){
+        localStorage.setItem('usuarioEncontrado', JSON.stringify(usuarioEncontrado));
+    }
 });
 
 function imprimirUsuarioCargados(usuariosRegistrados) {

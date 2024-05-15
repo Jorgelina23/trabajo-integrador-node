@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../assets/imagenes/Bodegon01.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*css fuente*/
+    .poppins-thin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      
+      .poppins-extralight {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+      }
+      
+      .poppins-light {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .poppins-medium {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+      
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      .poppins-extrabold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+      
+      .poppins-black {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+      
+      .poppins-thin-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+      }
+      
+      .poppins-extralight-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: italic;
+      }
+      
+      .poppins-light-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+      
+      .poppins-regular-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+      
+      .poppins-medium-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+      
+      .poppins-semibold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+      }
+      
+      .poppins-bold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+      
+      .poppins-extrabold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: italic;
+      }
+      
+      .poppins-black-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+      }
+
+.bgColor{
+    background-color: #BCA37F
+}
+
+.navbar{
+    display: flex;
+    font-size: 1rem ;
+    padding: 1rem;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.navbar-brand{
+  margin-left: 5%;
+  font-size:50%;
+}
+ .navbar-nav{
+  margin-right: 7%;
+} 
+
+
+ul.dropdown-menu{
+  background-color: #BCA37F; /* Cambia al color de fondo deseado */
+}
+
+.a{
+    text-decoration: none;
+    color: white;
+
+}
+
+h2{
+  color: white !important;
+}
+.cabeceraTabla {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between;
+  margin: 20px; /* Espacio entre la cabecera y la tabla */
+}
+
+#filaEntradaDatos {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+#tablaUsuarios td {
+  border: 1px solid black;
+  padding: 8px; /* Añade un espacio interno a las celdas */
+}
+table {
+    width: 100%; /* Ancho de la tabla al 100% del contenedor */
+    max-width: 100%; /* Ancho máximo de la tabla */
+    background-color: rgba(95, 158, 160, 0.75);
+    color: white;
+}
+
+th, td {
+    max-width: 10%; /* Ancho máximo de cada celda de la tabla */
+}
+
+table th,tbody {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select{
+    width: 100%; /* Ancho del input o select al 100% del contenedor */
+}
+
+
+.acciones-cell {
+  display: flex; /* Mostrar los botones en línea */
+  justify-content: space-around; /* Espaciar los botones de manera uniforme */
+  align-items: center; /* Centrar verticalmente los botones */
+}
+
+/* button {
+    flex: 1;  Distribuye el espacio disponible entre los botones 
+    margin: 0 1px;
+    padding-left: 4%;
+    padding-right: 4%;
+} */
+
+.btn-agregar-usuario{
+  background-color:#008000; /* Cambia el color de fondo según tus preferencias */
+  color: white; /* Cambia el color del texto para que sea visible */
+}
+.btn-eliminar-usuario {
+  background-color: #FF5733; /* Rojo */
+  color: white; /* Texto en color blanco para mayor contraste */
+}
+.btn-editar-usuario{
+  background-color:#ffff00;
+  color:black;
+}
