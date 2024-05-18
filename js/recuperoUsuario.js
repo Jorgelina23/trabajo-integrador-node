@@ -10,39 +10,6 @@ class Usuario {
         this.tipoDeUsuario = tipoDeUsuario;
         this.isLogueado = isLogueado;
     }
-
-    getNombre() { return this.nombre; }
-    setNombre(nuevoNombre) { this.nombre = nuevoNombre; }
-
-    getApellido() { return this.apellido; }
-    setApellido(nuevoApellido) { this.apellido = nuevoApellido; }
-
-    getFechaNacimiento() { return this.fechaNacimiento; }
-    setFechaNacimiento(nuevaFecha) { this.fechaNacimiento = nuevaFecha; }
-
-    getEmail() { return this.email; }
-
-    getContrasena() { return this.contrasena; }
-    setContrasena(nuevaContrasena) { this.contrasena = nuevaContrasena; }
-
-    getTipoDeUsuario() { return this.tipoDeUsuario; }
-    setTipoDeUsuario(tipoDeUsuario) {
-        // Verificar que el tipoDeUsuario sea "admin" o "user"
-        if (tipoDeUsuario === "admin" || tipoDeUsuario === "user") {
-            this.tipoDeUsuario = tipoDeUsuario;
-        } else {
-            console.error("Error: tipoDeUsuario debe ser 'admin' o 'user'.");
-        }
-    }
-
-    validarContrasena(password) { return this.contrasena === password; }
-
-    mostrarInformacion() {
-        let informacionDelUsuario = `Nombre: ${this.getNombre()} ${this.getApellido()}\n`;
-        informacionDelUsuario += `Fecha de Nacimiento: ${this.getFechaNacimiento()}\n`;
-        informacionDelUsuario += `Correo Electrónico: ${this.getEmail()}`;
-        return informacionDelUsuario;
-    }
 }
 
 let usuariosRegistrados = []; // Definir usuariosRegistrados fuera de la función handleFormSubmit
