@@ -134,7 +134,7 @@ body{
   font-size:50%;
 }
  .navbar-nav{
-  margin-right: 7%;
+  margin-right: 3%;
 } 
 
 
@@ -152,67 +152,93 @@ h2{
   color: white !important;
 }
 .cabeceraTabla {
+  margin-top: 3%;
   display: flex;
-  align-items: center; /* Centra verticalmente los elementos */
+  flex-direction: row;
   justify-content: space-between;
-  margin: 20px; /* Espacio entre la cabecera y la tabla */
+  align-items: center;
+}
+
+.cabeceraTabla h2 {
+  color: white;
 }
 
 #filaEntradaDatos {
   display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center;
+  justify-content: center;
 }
 
-#tablaUsuarios td {
-  border: 1px solid black;
-  padding: 8px; /* Añade un espacio interno a las celdas */
-}
-table {
-    width: 100%; /* Ancho de la tabla al 100% del contenedor */
-    max-width: 100%; /* Ancho máximo de la tabla */
-    background-color: rgba(95, 158, 160, 0.75);
-    color: white;
+#filaEntradaDatos input, #filaEntradaDatos select {
+  margin-right: 1rem;
 }
 
-th, td {
-    max-width: 10%; /* Ancho máximo de cada celda de la tabla */
-}
-
-table th,tbody {
-    text-align: center;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select{
-    width: 100%; /* Ancho del input o select al 100% del contenedor */
-}
-
-
-.acciones-cell {
-  display: flex; /* Mostrar los botones en línea */
-  justify-content: space-around; /* Espaciar los botones de manera uniforme */
-  align-items: center; /* Centrar verticalmente los botones */
-}
-
-/* button {
-    flex: 1;  Distribuye el espacio disponible entre los botones 
-    margin: 0 1px;
-    padding-left: 4%;
-    padding-right: 4%;
-} */
-
-.btn-agregar-usuario{
+.btn-agregar-usuario {
+  padding: 10px;
   background-color:#008000; /* Cambia el color de fondo según tus preferencias */
   color: white; /* Cambia el color del texto para que sea visible */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.btn-agregar-usuario i {
+  margin-right: 5px;
+}
+
 .btn-eliminar-usuario {
   background-color: #FF5733; /* Rojo */
   color: white; /* Texto en color blanco para mayor contraste */
+  border-radius: 5px;
 }
 .btn-editar-usuario{
   background-color:#ffff00;
   color:black;
+  margin-right: 3px;
+  border-radius: 5px;
 }
+
+.tabla-contenedor {
+  width: 100%;
+  margin: 1% auto;
+  background-color:rgba(95, 158, 160, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabla-contenedor table {
+  width: 100%;
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+
+.tabla-contenedor th, .tabla-contenedor td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-contenedor th {
+  background-color: rgba(31, 58, 104,0.75);
+  color: white;
+}
+
+/* Limita la altura de la tabla y permite el desplazamiento */
+.tabla-contenedor tbody {
+  display: block;
+  max-height: 400px; /* Ajusta según sea necesario */
+  overflow-y: auto;
+}
+
+.tabla-contenedor thead, .tabla-contenedor tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  color:white;
+}
+
+.tabla-contenedor tbody tr:hover {
+  background-color: rgba(245, 245, 245,0.75);
+  color: black;
+}
+

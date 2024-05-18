@@ -100,7 +100,7 @@ function handleFormSubmit(event) {
         
         // Agregar el nuevo usuario al array de usuarios registrados
         usuariosRegistrados.push(nuevoUsuario);
-    
+        
         // Restablecer el formulario
         event.target.reset();
     

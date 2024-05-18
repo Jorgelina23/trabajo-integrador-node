@@ -16,4 +16,7 @@ Preguntas:
 /-------------------------------------------------------------------------------------------------
 Realizar pagina para que el usuario pueda cambiar su contraseña sino la recuerda. Realizado - 09/05/2024
 /-------------------------------------------------------------------------------------------------
-Realizar pagina de administracion de Usuarios => admin (CRUD).
+Realizar pagina de administracion de Usuarios => admin (CRUD). 18/05/2024
+/-------------------------------------------------------------------------------------------------
+Paginas Validadas:
+index.html (index.css), registro_usuario.html(registro.css),nuevo_usuario.html(usuarios.css), login.html(registro.css), lista_usuario.html(usuarios.css), y editar_usuario.html(registro.css)-18/05/2024

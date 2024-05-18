@@ -155,8 +155,9 @@ function cargarTablaUsuarios() {
         iconoEditar.classList.add('fas', 'fa-edit'); // Clases de Font Awesome para el icono de editar
         editarBtn.appendChild(iconoEditar);
         editarBtn.addEventListener('click', function() {
-            // Aquí puedes implementar la lógica para editar el usuario
+            let usuarioEditar = editarUsuario(usuario.email)
             console.log('Editar usuario:', usuario);
+            window.location.href = "./editar_usuario.html";
         });
         accionesCell.appendChild(editarBtn);
         editarBtn.classList.add('btn-editar-usuario');
@@ -190,6 +191,18 @@ function agregarUsuario(){
     window.location.href ="./nuevo_usuario.html"
 }
 
+//
+// Función para editar un usuario del array usuariosRegistrados
+function editarUsuario(email) {
+    let usuario = usuariosRegistrados.find(usuario => usuario.email === email);
+    if (usuario) {
+        localStorage.setItem('usuarioAEditar', JSON.stringify(usuario));
+        window.location.href = "./editar_usuario.html";
+    } else {
+        console.log("Usuario no encontrado");
+    }
+}
+
 // Función para eliminar un usuario del array usuariosRegistrados
 function eliminarUsuario(email) {
     // Obtener el usuario a eliminar
@@ -219,9 +232,20 @@ function eliminarUsuario(email) {
     }
 }
 function sesionIniciada() {
+    cambiarFondo
     alert("No acceso sin autorización. Se redireccionará al Inicio.")
     window.location.href = "../index.html";
 }
+
+function cambiarFondo(){
+    var elemento = document.getElementById("miDiv");
+    
+    // Cambia el fondo usando CSS a través de JavaScript
+    elemento.style.backgroundImage = "url('../assets/imagenes/Noaccess01.jpeg')";
+    elemento.style.backgroundSize = "cover"; // Esto asegura que la imagen cubra todo el div
+    elemento.style.backgroundPosition = "center"; // Centra la imagen en el div
+    elemento.style.height = "100vh"; // Ajusta la altura del div si es necesario
+    }
 
 function limpiarUsuario() {
     // Limpiar la variable de usuarioEncontrado

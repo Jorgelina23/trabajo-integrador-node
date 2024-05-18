@@ -10,14 +10,14 @@
     rel="stylesheet">
   <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon">
   <title>Bodegón | Lo de Tito | Registro de Cuenta</title>
-  <script src="../js/recupero.js"></script>
+  <script src="../js/recuperoUsuario.js"></script>
   <!-- Estilos -->
-  <link rel="stylesheet"  href="../css/registro.css"/>
+  <link rel="stylesheet"  href="../css/registro.css">
 </head>
 <body>
   <div class="register-container">
     <h2>Cambiar la contraseña</h2>
-    <form action="" method="POST" onsubmit="return handleFormSubmit(event);">
+    <form action="#" method="POST" onsubmit="return handleFormSubmit(event);">
       <input type="email" name="email" id="emailInput" placeholder="E-mail" required onblur="asignarPreguntaSeguridad(this.value)">
       <select name="pregunta" class="cbpreguntas" id="preguntas" required>
           <option value="" disabled selected hidden>Selecciona una pregunta para recuperar contraseña</option>
