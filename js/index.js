@@ -11,7 +11,7 @@ class Usuario {
 }
 
 // Variables globales para usuario y tipo de usuario
-let usuarioEncontrado = null;
+let usuarioEncontrado = null; //let usuarioEncontrado = new Usuario();
 let tipoUsuario = "user"; // Por defecto, el tipo de usuario es "user"
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -73,5 +73,5 @@ function limpiarUsuario() {
     localStorage.removeItem('usuarioEncontrado');
 
     // Mostrar mensaje de éxito o realizar otras acciones necesarias
-    alert("¡Se ha limpiado el usuario logueado!");
+    alert("¡Se cerro exitosamente la sesión!");
 }

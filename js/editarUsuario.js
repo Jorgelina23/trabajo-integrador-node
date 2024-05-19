@@ -12,9 +12,9 @@ class Usuario {
     }
 }
 
-var usuariosRegistrados = [];
+let usuariosRegistrados = [];
 let usuarioEncontrado = new Usuario();
-var usuarioAEditar = null;
+let usuarioAEditar = null;
 
 // Función para manejar el evento de envío del formulario
 function handleFormSubmit(event) {

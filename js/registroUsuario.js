@@ -13,7 +13,7 @@ class Usuario {
 }
 
 // Array para almacenar usuarios registrados
-var usuariosRegistrados = [];
+let usuariosRegistrados = [];
 
 // Función para manejar el evento de envío del formulario
 function handleFormSubmit(event) {

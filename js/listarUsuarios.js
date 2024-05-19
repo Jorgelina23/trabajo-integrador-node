@@ -12,7 +12,7 @@ class Usuario {
     }
 }
 // Array para almacenar usuarios registrados
-var usuariosRegistrados = [];
+let usuariosRegistrados = [];
 let usuarioEncontrado=new Usuario();
 window.addEventListener('beforeunload', function() {
     if(usuarioEncontrado.isLogueado){
@@ -200,7 +200,7 @@ function eliminarUsuario(email) {
 }
 function sesionIniciada() {
     cambiarFondo
-    alert("No acceso sin autorización. Se redireccionará al Inicio.")
+    alert("No, acceso sin autorización. Se redireccionará al Inicio.")
     window.location.href = "../index.html";
 }
 
@@ -220,7 +220,6 @@ function limpiarUsuario() {
 
     // Limpiar el almacenamiento local
     localStorage.removeItem('usuarioEncontrado');
-
-    // Redirigir a la página de inicio
-    window.location.href = "../index.html";
+    // Mostrar mensaje de éxito o realizar otras acciones necesarias
+    alert("¡Se cerro exitosamente la sesión!");
 }
