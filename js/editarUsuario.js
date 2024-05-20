@@ -167,55 +167,14 @@ window.addEventListener('DOMContentLoaded', function() {
         usuarioAEditar = JSON.parse(usuarioAEditarString);
         cargarDatosEnFormulario(usuarioAEditar);
     }
-
-    /* function mostrarElementosPorTipoUsuario() {
-        const loginLink = document.getElementById("loginLink");
-        const registerLink = document.getElementById("registerLink");
-        const adminDropdown = document.getElementById("adminDropdown");
-        const reservaLink = document.getElementById("reservaLink");
-        const closeLink = document.getElementById("closeLink");
-
-        // Ocultar todos los elementos primero
-        loginLink.style.display = "none";
-        registerLink.style.display = "none";
-        adminDropdown.style.display = "none";
-        reservaLink.style.display = "none";
-        closeLink.style.display = "none";
-
-        if (tipoUsuario === "admin") {
-            adminDropdown.style.display = "block"; // Mostrar el menú de administrador
-            closeLink.style.display = "block";
-        } else {
-            loginLink.style.display = "block"; // Mostrar el botón de iniciar sesión
-            registerLink.style.display = "block"; // Mostrar el botón de registrarse
-            if (usuarioEncontrado && usuarioEncontrado.isLogueado) {
-                reservaLink.style.display = "block"; // Mostrar el enlace de reserva solo si está logueado
-                closeLink.style.display = "block";
-            }
-        }
-    } */
-
-    // Llamar a la función al cargar la página
-    //mostrarElementosPorTipoUsuario();
-
-    // Agregar un evento de clic al elemento closeLink
-    /*const closeLinkElement = document.getElementById("closeLink");
-    closeLinkElement.addEventListener("click", function(event) {
-        // Prevenir el comportamiento predeterminado del enlace
-        event.preventDefault();
-
-        // Llamar a la función limpiarUsuario
-        limpiarUsuario();
-        window.location.href = "../index.html";
-    });
-
+    
     // Añadir el evento al formulario*/
     document.querySelector('form').addEventListener('submit', handleFormSubmit);
 });
 
 // Array para almacenar usuarios registrados
 window.addEventListener('beforeunload', function() {
-    if (usuarioEncontrado.isLogueado) {
+    if (usuarioEncontrado.isLogueado && usuarioEncontrado.tipoDeUsuario==="admin") {
         localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
     }
 });

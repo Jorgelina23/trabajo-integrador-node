@@ -54,8 +54,8 @@ window.addEventListener('DOMContentLoaded', function() {
             adminDropdown.style.display = "block"; // Mostrar el menú de administrador
             closeLink.style.display = "block";
         } else {
-            loginLink.style.display = "block"; // Mostrar el botón de iniciar sesión
-            registerLink.style.display = "block"; // Mostrar el botón de registrarse
+            //loginLink.style.display = "block"; // Mostrar el botón de iniciar sesión
+            //registerLink.style.display = "block"; // Mostrar el botón de registrarse
             if (usuarioEncontrado && usuarioEncontrado.isLogueado) {
                 reservaLink.style.display = "block"; // Mostrar el enlace de reserva solo si está logueado
                 closeLink.style.display = "block";

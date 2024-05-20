@@ -20,3 +20,6 @@ Realizar pagina de administracion de Usuarios => admin (CRUD). 18/05/2024
 /-------------------------------------------------------------------------------------------------
 Paginas Validadas:
 index.html (index.css), registro_usuario.html(registro.css),nuevo_usuario.html(usuarios.css), login.html(registro.css), lista_usuario.html(usuarios.css), y editar_usuario.html(registro.css)-18/05/2024
+/-------------------------------------------------------------------------------------------------
+Cambiar cuando inicie como usuario el navbar que no salga inicio de sesion y Registro
+Cambiar cuando ingreso como usuario cambiar los link registro, 

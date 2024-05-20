@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
             if (usuarioEncontrado && usuarioEncontrado.isLogueado) {
                 reservaLink.style.display = "block"; // Mostrar el enlace de reserva solo si está logueado
                 closeLink.style.display = "block";
+                loginLink.style.display = "none"; // Oculta el botón de iniciar sesión
+                registerLink.style.display = "none"; // Oculta el botón de registrarse
             }
         }
     }
