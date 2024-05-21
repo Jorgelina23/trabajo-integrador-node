@@ -24,7 +24,7 @@ class Menu {
 }
 
 let usuarioEncontrado = new Usuario();
-let menuesRegistrados = [];
+let reservasRegistradas = [];
 
 window.addEventListener('DOMContentLoaded', function() {
     const usuarioEncontradoString = localStorage.getItem('usuarioEncontrado');
@@ -93,7 +93,7 @@ function cargarTablaMenues() {
     let tbody = tablaMenues.querySelector('tbody');
     tbody.innerHTML = '';
 
-    menuesRegistrados.forEach(menu => {
+    reservasRegistradas.forEach(menu => {
         let fila = document.createElement('tr');
 
         Object.keys(menu).forEach(key => {

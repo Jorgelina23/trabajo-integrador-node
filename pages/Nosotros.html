@@ -25,18 +25,46 @@
   <body>
     <header class="poppins-light-italic">
       <!--navegador, en el encontraremos los enlaces hacia los diferentes paginas del proyecto. En el primer div: el nombre del bodegon, en el segundo div agrupados los enlaces dentro de una lista desordenada-->
-
-      <nav class="navbar bgColor ">
-        <div class="caja1  ">
-          <h1 class="poppins-extralight-italic"><a class="a" href="../index.html">Bodegon "Lo de Tito"</a></h1>
-        </div>
-
-        <div class="caja2">
-          <a class="a" href="../index.html">Inicio</a>
-          <a class="a" href="#Nosotros.html">Nosotros</a>
-          <a class="a" href="./Reservas.html">Reservas</a>
-          <a class="a" href="./Ingresar.html">Iniciar Sesión</a>
-          <a class="a" href="./Registro.html">Registrarse</a>
+      <nav class="navbar navbar-expand-lg bgColor">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-1 poppins-extralight-italic text-white" href="#">Bodegón "Lo de Tito"</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./Nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./Reservas.html" id="reservaLink">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./login.html" id="loginLink">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./registro_usuario.html" id="registerLink">Registrarse</a>
+              </li>
+              <li class="nav-item dropdown" id="adminDropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Administrar
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="./lista_menues.html">Gestionar Menues</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Gestionar Reservas</a></li>
+                  <li><a class="dropdown-item text-white" href="./lista_usuarios.html">Gestionar Usuarios</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" id="closeLink">Cerrar Sesion</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -54,21 +82,92 @@
               hospitalidad, recordando siempre los inicios humildes de un hombre que convirtió un sueño en realidad.
             </p>
           </div>
-
-        </div>
-        <div>
-          <h2>Ubicacion</h2>
-          <div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.867146108848!2d-58.36472442452317!3d-34.632797459034066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b7c6e416e9%3A0xdb9ff7bc40618ede!2sMart%C3%ADn%20Rodr%C3%ADguez%20520%2C%20C1159ADD%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712111520613!5m2!1ses-419!2sar"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      </section>
+      <section class="section margen poppins-light">
+            <h2>Nuestros platos</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="../assets/imagenes/Menu/asado_de_cerdo.jpg" alt="asado de cerdo">
+                    <div class="content">
+                        <h3>ASADO DE CERDO</h3>
+                        <p>Asado de cerdo con papas fritas o ensalada</p>
+                        <p>$4.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/imagenes/Menu/chorizo_pomarola.jpg" alt="chorizo a la pomarola">
+                    <div class="content">
+                        <h3>CHORIZO A LA POMAROLA </h3>
+                        <p>Chorizo a la pomarola con pure o papas fritas</p>
+                        <p>$4.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/imagenes/Menu/churrasco_ternera.jpg" alt="churrasco de ternera">
+                    <div class="content">
+                        <h3>CHURRASCO DE TERNERA </h3>
+                        <p>churrasco de ternera con guarnicion a gusto </p>
+                        <p>$4.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                  <img src="../assets/imagenes/italianRavioli.jpg" alt="ravioles">
+                  <div class="content">
+                      <h3>RAVIOLES DE CORDERO</h3>
+                      <p>Ravioles de cordero con salsa de la casa </p>
+                      <p>$4.000</p>
+                  </div>
+              </div>
+              <div class="card">
+                <img src="../assets/imagenes/ñoquis.jpeg" alt="ñoquis">
+                <div class="content">
+                    <h3>ÑOQUIS </h3>
+                    <p> Ñoquis de papa con salsa  a gusto </p>
+                    <p>$4.000</p>
+                </div>
+            </div>
+            <div class="card">
+              <img src="../assets/imagenes/platillosArgentinos.jpg" alt="asado">
+              <div class="content">
+                  <h3>ASADO </h3>
+                  <p> Asado para dos con guarnicion a gusto </p>
+                  <p>$4.000</p>
+              </div>
+          </div>
+            </div>
+        </section>
+      </main>
+      <footer>
+        <div class="container-footer">
+          <div class="imagen-footer">
+            <img class="imagen-logo" src="../assets/imagenes/" alt="Logo HealthAPP">
+          </div>
+          <div class="texto-footer">
+            <br>
+            <p><strong>Lo de Tito</strong> Derechos © Reservados Año 2024 </p>
+            <ul>
+              <li><strong>E-mail:</strong><a href="lodetito@gmail.com"> infolodetito@gmail.com</a></li>
+              <li><strong>Dirección:</strong> Martin Rodriguez 520 </li>
+              <li><strong>Localidad:</strong> Ciudad Autonoma de Buenos Aires</li>
+              <li><strong>Código Postal:</strong> C1159ADD</li>
+              <li><strong>Pais:</strong> Argentina</li>
+            </ul>
+          </div>
+          <div class="mapa-footer">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.867146108848!2d-58.36472442452317!3d-34.632797459034066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b7c6e416e9%3A0xdb9ff7bc40618ede!2sMart%C3%ADn%20Rodr%C3%ADguez%20520%2C%20C1159ADD%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712111520613!5m2!1ses-419!2sar" width="280" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
+<<<<<<< HEAD
+      </footer>
+  
+    
+=======
       </section>
     </main>
 
-    
+    <script src="../js/index.js"></script>
+>>>>>>> 3cf1dfb51768557c889301b7d3a40bfe7c70d19f
   </body>
 
 </html>
