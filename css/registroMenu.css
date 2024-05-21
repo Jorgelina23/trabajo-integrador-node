@@ -1,0 +1,100 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background-image: url(../assets/imagenes/Bodegon01.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /*width:35%;*/
+    margin: auto;
+}
+
+.register-container {
+    width: 400px;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(
+      249,
+      249,
+      249,
+      0.75
+    );
+    font-weight: bold;
+}
+
+.register-container h2 {
+    text-align: center;
+}
+
+.register-container input[type="text"],
+.register-container input[type="file"],
+.register-container textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+}
+.register-container label{
+    display: flex;
+    align-self: start;
+}
+
+.register-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.register-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.register-container h2 {
+    text-align: center;
+}
+
+.btn-cancelar{
+    margin-top: 10px;
+    text-align: center;
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f80505;
+    color: rgb(248, 245, 245);
+    cursor: pointer;
+}
+.btn-cancelar a {
+    text-decoration: none; /* Esta línea evita la subrayado del enlace */
+    color: rgb(248, 245, 245); /* Agregar esta regla para restaurar el color original del texto */
+}
+
+.btn-cancelar:hover{
+    background-color:#e60303;
+}
+.btn-cancelar:hover {
+    background-color: #e60303;
+    color: rgb(248, 245, 245); /* Cambiar el color del texto al pasar el mouse */
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
