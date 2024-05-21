@@ -173,7 +173,7 @@ h2{
   margin-right: 1rem;
 }
 
-.btn-agregar-usuario {
+.btn-agregar-menu {
   padding: 10px;
   background-color:#008000; /* Cambia el color de fondo según tus preferencias */
   color: white; /* Cambia el color del texto para que sea visible */
@@ -182,16 +182,16 @@ h2{
   cursor: pointer;
 }
 
-.btn-agregar-usuario i {
+.btn-agregar-menu i {
   margin-right: 5px;
 }
 
-.btn-eliminar-usuario {
+.btn-eliminar-menu {
   background-color: #FF5733; /* Rojo */
   color: white; /* Texto en color blanco para mayor contraste */
   border-radius: 5px;
 }
-.btn-editar-usuario{
+.btn-editar-menu{
   background-color:#ffff00;
   color:black;
   margin-right: 3px;

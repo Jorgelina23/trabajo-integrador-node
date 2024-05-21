@@ -14,11 +14,6 @@ class Usuario {
 // Array para almacenar usuarios registrados
 let usuariosRegistrados = [];
 let usuarioEncontrado=new Usuario();
-window.addEventListener('beforeunload', function() {
-    if(usuarioEncontrado.isLogueado){
-        localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
-    }
-});
 
 // Recuperar los datos del almacenamiento local al cargar la página
 window.addEventListener('DOMContentLoaded', function() {
@@ -212,7 +207,7 @@ function cambiarFondo(){
     elemento.style.backgroundSize = "cover"; // Esto asegura que la imagen cubra todo el div
     elemento.style.backgroundPosition = "center"; // Centra la imagen en el div
     elemento.style.height = "100vh"; // Ajusta la altura del div si es necesario
-    }
+}
 
 function limpiarUsuario() {
     // Limpiar la variable de usuarioEncontrado
