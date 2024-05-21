@@ -237,11 +237,11 @@ function sesionIniciada() {
 }
 
 function cambiarFondo(){
-var elemento = document.getElementById("miDiv");
-
-// Cambia el fondo usando CSS a través de JavaScript
-elemento.style.backgroundImage = "url('../assets/imagenes/Noaccess01.jpeg')";
-elemento.style.backgroundSize = "cover"; // Esto asegura que la imagen cubra todo el div
-elemento.style.backgroundPosition = "center"; // Centra la imagen en el div
-elemento.style.height = "100vh"; // Ajusta la altura del div si es necesario
+    var elemento = document.getElementById("miDiv");
+    
+    // Cambia el fondo usando CSS a través de JavaScript
+    elemento.style.backgroundImage = "url('../assets/imagenes/Noaccess01.jpeg')";
+    elemento.style.backgroundSize = "cover"; // Esto asegura que la imagen cubra todo el div
+    elemento.style.backgroundPosition = "center"; // Centra la imagen en el div
+    elemento.style.height = "100vh"; // Ajusta la altura del div si es necesario
 }
