@@ -178,9 +178,9 @@ ul.dropdown-menu{
 
 }
 
-.carousel-item img {
-        filter: blur(4px); /* ajusta el valor para cambiar el grado de desenfoque */
-    }
+/*.carousel-item img {
+        filter: blur(4px); /* ajusta el valor para cambiar el grado de desenfoque 
+    }*/
     
 
 
