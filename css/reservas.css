@@ -42,6 +42,7 @@ body {
     width: 100vw;
     height: 100%;
     padding-bottom: 2rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
