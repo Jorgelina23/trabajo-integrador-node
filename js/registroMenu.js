@@ -23,7 +23,7 @@ class Menu {
     }
 }
 
-let usuariosRegistrados = [];
+let usuarioEncontrado=new Usuario();
 let menuesRegistrados = [];
 
 function handleFormSubmit(event) {
@@ -64,10 +64,20 @@ function handleFormSubmit(event) {
 }
 
 window.addEventListener('beforeunload', function () {
-    localStorage.setItem('menuesRegistrados', JSON.stringify(menuesRegistrados));
+    if(usuarioEncontrado.isLogueado && usuarioEncontrado.tipoDeUsuario==="admin"){
+        localStorage.setItem('menuesRegistrados', JSON.stringify(menuesRegistrados));
+    }
 });
 
 window.addEventListener('DOMContentLoaded', function () {
+    const usuarioEncontradoString = localStorage.getItem('usuarioEncontrado');
+    if (usuarioEncontradoString) {
+        usuarioEncontrado = JSON.parse(usuarioEncontradoString);
+    }
+    if (!usuarioEncontrado || !usuarioEncontrado.isLogueado || usuarioEncontrado.tipoDeUsuario!=="admin") {
+        sesionIniciada();
+    }
+
     let menuesRegistradosString = localStorage.getItem('menuesRegistrados');
     if (menuesRegistradosString) {
         menuesRegistrados = JSON.parse(menuesRegistradosString);
@@ -138,3 +148,20 @@ function mostrarImagen(event) {
 }
 
 document.querySelector('input[name="imagenMenu"]').addEventListener('change', mostrarImagen);
+
+function sesionIniciada() {
+    cambiarFondo
+    alert("No, acceso sin autorización. Se redireccionará al Inicio.")
+    window.location.href = "../index.html";
+}
+
+function cambiarFondo(){
+    var elemento = document.getElementById("miDiv");
+    
+    // Cambia el fondo usando CSS a través de JavaScript
+    elemento.style.backgroundImage = "url('../assets/imagenes/Noaccess01.jpeg')";
+    elemento.style.backgroundSize = "cover"; // Esto asegura que la imagen cubra todo el div
+    elemento.style.backgroundPosition = "center"; // Centra la imagen en el div
+    elemento.style.height = "100vh"; // Ajusta la altura del div si es necesario
+    }
+
