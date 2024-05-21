@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon">
+  <title>Bodegón | Lo de Tito | Carga de Menú</title>
+  <script src="../js/registroMenu.js" defer></script>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/registroMenu.css">
+</head>
+<body>
+  <div class="register-container">
+    <h2>Cargar Menú Nuevo</h2>
+    <form action="#" method="POST" onsubmit="return handleFormSubmit(event);">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="text" name="precio" id="currencyInput" placeholder="Precio" oninput="validateCurrency()" required>
+      <p id="currencyMessage"></p>
+      <input type="file" name="imagenMenu" id="imagenMenu" placeholder="Imagen del Menú" required>
+      <div class="imagenCargadaMenu"></div>
+      <label for="comentarios">Comentarios:</label>
+      <textarea name="comentarios" rows="5" cols="50"></textarea>
+      <input type="submit" value="Guardar">
+    </form>
+    <div class="btn-cancelar">
+      <a href="./lista_menues.html">Cancelar</a>
+    </div>
+  </div>
+</body>
+</html>

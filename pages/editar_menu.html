@@ -6,22 +6,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
     rel="stylesheet">
   <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon">
   <title>Bodegón | Lo de Tito | Registro de Cuenta</title>
-  <script src="../js/registroUsuario.js"></script>
-  <!-- Estilos -->
-  <link rel="stylesheet"  href="../css/registro.css">
+  <script src="../js/editarUsuario.js" defer></script>
+  <link rel="stylesheet" href="../css/registro.css">
 </head>
 <body>
+  <div id="miDiv"></div>
   <div class="register-container">
-    <h2>Registrarse</h2>
+    <h2>Usuario a Modificar</h2>
     <form action="#" method="POST" onsubmit="return handleFormSubmit(event);">
       <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="text" name="apellido" placeholder="Apellido" required>
       <input type="text" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
-      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="email" name="email" placeholder="E-mail" readonly>
       <input type="password" name="contrasena" placeholder="Contraseña" required>
       <input type="password" name="confirmar_contrasena" placeholder="Confirmar Contraseña" required>
       <select name="pregunta" class="cbpreguntas" id="preguntas" required>
@@ -38,10 +38,15 @@
         <option value="¿Cuál es tu canción favorita?">¿Cuál es tu canción favorita?</option>
       </select>
       <input type="text" name="respuesta" placeholder="Respuesta para recuperar contraseña" required>
-      <input type="submit" value="Registrarse">
+      <select name="userType" class="cbTipoUsuario" id="tipoUsuario">
+        <option value="" disabled selected hidden>Selecciona el tipo de usuario (admin/user)</option>
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+      </select>
+      <input type="submit" value="Guardar">
     </form>
     <div class="btn-cancelar">
-      <a href="../index.html">Cancelar</a>
+      <a href="./lista_usuarios.html">Cancelar</a>
     </div>
   </div>
 </body>

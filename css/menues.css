@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../assets/imagenes/Bodegon01.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*css fuente*/
+    .poppins-thin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      
+      .poppins-extralight {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+      }
+      
+      .poppins-light {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .poppins-medium {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+      
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      .poppins-extrabold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+      
+      .poppins-black {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+      
+      .poppins-thin-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+      }
+      
+      .poppins-extralight-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: italic;
+      }
+      
+      .poppins-light-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+      
+      .poppins-regular-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+      
+      .poppins-medium-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+      
+      .poppins-semibold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+      }
+      
+      .poppins-bold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+      
+      .poppins-extrabold-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: italic;
+      }
+      
+      .poppins-black-italic {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+      }
+
+.bgColor{
+    background-color: #BCA37F
+}
+
+.navbar{
+    display: flex;
+    font-size: 1rem ;
+    padding: 1rem;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.navbar-brand{
+  margin-left: 5%;
+  font-size:50%;
+}
+ .navbar-nav{
+  margin-right: 3%;
+} 
+
+
+ul.dropdown-menu{
+  background-color: #BCA37F; /* Cambia al color de fondo deseado */
+}
+
+.a{
+    text-decoration: none;
+    color: white;
+
+}
+
+h2{
+  color: white !important;
+}
+.cabeceraTabla {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabeceraTabla h2 {
+  color: white;
+}
+
+#filaEntradaDatos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#filaEntradaDatos input, #filaEntradaDatos select {
+  margin-right: 1rem;
+}
+
+.btn-agregar-usuario {
+  padding: 10px;
+  background-color:#008000; /* Cambia el color de fondo según tus preferencias */
+  color: white; /* Cambia el color del texto para que sea visible */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-agregar-usuario i {
+  margin-right: 5px;
+}
+
+.btn-eliminar-usuario {
+  background-color: #FF5733; /* Rojo */
+  color: white; /* Texto en color blanco para mayor contraste */
+  border-radius: 5px;
+}
+.btn-editar-usuario{
+  background-color:#ffff00;
+  color:black;
+  margin-right: 3px;
+  border-radius: 5px;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  margin: 1% auto;
+  background-color:rgba(95, 158, 160, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabla-contenedor table {
+  width: 100%;
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+
+.tabla-contenedor th, .tabla-contenedor td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-contenedor th {
+  background-color: rgba(31, 58, 104,0.75);
+  color: white;
+}
+
+/* Limita la altura de la tabla y permite el desplazamiento */
+.tabla-contenedor tbody {
+  display: block;
+  max-height: 400px; /* Ajusta según sea necesario */
+  overflow-y: auto;
+}
+
+.tabla-contenedor thead, .tabla-contenedor tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  color:white;
+}
+
+.tabla-contenedor tbody tr:hover {
+  background-color: rgba(245, 245, 245,0.75);
+  color: black;
+}
+
