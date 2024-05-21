@@ -25,18 +25,46 @@
   <body>
     <header class="poppins-light-italic">
       <!--navegador, en el encontraremos los enlaces hacia los diferentes paginas del proyecto. En el primer div: el nombre del bodegon, en el segundo div agrupados los enlaces dentro de una lista desordenada-->
-
-      <nav class="navbar bgColor ">
-        <div class="caja1  ">
-          <h1 class="poppins-extralight-italic"><a class="a" href="../index.html">Bodegon "Lo de Tito"</a></h1>
-        </div>
-
-        <div class="caja2">
-          <a class="a" href="../index.html">Inicio</a>
-          <a class="a" href="#Nosotros.html">Nosotros</a>
-          <a class="a" href="./Reservas.html">Reservas</a>
-          <a class="a" href="./Ingresar.html">Iniciar Sesión</a>
-          <a class="a" href="./Registro.html">Registrarse</a>
+      <nav class="navbar navbar-expand-lg bgColor">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-1 poppins-extralight-italic text-white" href="#">Bodegón "Lo de Tito"</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./Nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./Reservas.html" id="reservaLink">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./login.html" id="loginLink">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./registro_usuario.html" id="registerLink">Registrarse</a>
+              </li>
+              <li class="nav-item dropdown" id="adminDropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Administrar
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="./lista_menues.html">Gestionar Menues</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Gestionar Reservas</a></li>
+                  <li><a class="dropdown-item text-white" href="./lista_usuarios.html">Gestionar Usuarios</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" id="closeLink">Cerrar Sesion</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -68,7 +96,7 @@
       </section>
     </main>
 
-    
+    <script src="../js/index.js"></script>
   </body>
 
 </html>

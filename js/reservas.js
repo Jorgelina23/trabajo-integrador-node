@@ -1,25 +1,24 @@
 let formData = document.getElementById('form');
 let tables = document.querySelectorAll('.table')
 document.querySelector('.dateSelector').addEventListener('change', ()=> {
-    console.log('algo')
     disponibilidadMesas()
 })
 
-console.log(tables)
-
 class Reserva {
-    constructor(fullName, email, phone, table, food, date, person){
+    constructor(fullName, email, phone, table, food, date, horario, person){
         this.fullName = fullName,
         this.email = email,
         this.phone = phone,
-        this.table = table,
+        this.table = (parseInt(table) + 1),
         this.food = food,
         this.date = date,
+        this.horario = horario
         this.person = person
     }
 }
 
 let mesasDisponibles = [...tables]
+console.log(mesasDisponibles)
 
 function obtenerValorSeleccionado(elements, msj) {
     for (let i = 0; i < elements.length; i++) {
@@ -29,6 +28,17 @@ function obtenerValorSeleccionado(elements, msj) {
     }
     return alert(msj); // Si ningún elemento está seleccionado
 }
+
+const closeLink = document.getElementById("closeLink");
+    closeLink.addEventListener("click", e => {
+        e.preventDefault();
+        limpiarUsuario();
+        window.location.href = "../index.html";
+    });
+
+function limpiarUsuario() {
+        localStorage.removeItem('usuarioEncontrado');
+    }
 
 function disponibilidadMesas(){
     
@@ -40,7 +50,7 @@ function disponibilidadMesas(){
     for(let i = 0; i < tables.length; i++){
         if(mesasDisponibles[i] === false ){
             tables[i].classList.add('isReserved') 
-            tables[i].innerHTML = `Mesa ${i + 1} <br/> Reservado, lo siento`
+            tables[i].innerHTML = `Mesa ${i + 1} <br/> Reservada, lo siento`
         }else {
             tables[i].classList.remove('isReserved')
             tables[i].innerHTML = `Mesa ${i + 1} <br/> Disponible`
@@ -65,8 +75,6 @@ function limpiarCampos(){
 
 window.addEventListener('DOMContentLoaded', ()=>{
     let usuarioEncontrado = JSON.parse(localStorage.getItem('usuarioEncontrado'))
-
-    console.log()
     
     document.getElementById('name').value = usuarioEncontrado.nombre
     document.getElementById('email').value = usuarioEncontrado.email;
@@ -97,15 +105,17 @@ const guardarReserva = reserva => {
         Nombre: ${reserva.fullName}
         Email: ${reserva.email}
         Comida: ${reserva.food}
-        Fecha: ${reserva.date}
+        Fecha y Horario: ${reserva.date} a las ${reserva.horario}
         Quien asiste: ${reserva.person}
-        Mesa: ${parseInt(reserva.table) + 1}`)
+        Mesa: ${parseInt(reserva.table)}`)
     if(confirmado) {
         alert('Reserva realizada correctamente')
+        listaReservas.push(reserva)
         limpiarCampos()
     }
         
     // Guardar la lista de reservas actualizada en el localStorage
+
     localStorage.setItem('reservas', JSON.stringify(listaReservas));
 }
 
@@ -134,7 +144,7 @@ formData.addEventListener('submit', (e) => {
 
     
 
-    let newReserva = new Reserva(fullName, mail, phone, table, foodChoice, fecha, personChoice, horario);
+    let newReserva = new Reserva(fullName, mail, phone, table, foodChoice, fecha, horario, personChoice );
 
     guardarReserva(newReserva);
 });
