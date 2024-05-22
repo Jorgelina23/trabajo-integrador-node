@@ -1,151 +1,47 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
-    background-image: url(../assets/imagenes/Bodegon01.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url(../assets/imagenes/Bodegon01.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
 }
 
 /*css fuente*/
-    .poppins-thin {
-        font-family: "Poppins", sans-serif;
-        font-weight: 100;
-        font-style: normal;
-      }
-      
-      .poppins-extralight {
-        font-family: "Poppins", sans-serif;
-        font-weight: 200;
-        font-style: normal;
-      }
-      
-      .poppins-light {
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-      }
-      
-      .poppins-regular {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-      .poppins-medium {
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-      }
-      
-      .poppins-semibold {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-style: normal;
-      }
-      
-      .poppins-bold {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-      }
-      
-      .poppins-extrabold {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-style: normal;
-      }
-      
-      .poppins-black {
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-style: normal;
-      }
-      
-      .poppins-thin-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 100;
-        font-style: italic;
-      }
-      
-      .poppins-extralight-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 200;
-        font-style: italic;
-      }
-      
-      .poppins-light-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
-        font-style: italic;
-      }
-      
-      .poppins-regular-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: italic;
-      }
-      
-      .poppins-medium-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-style: italic;
-      }
-      
-      .poppins-semibold-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-style: italic;
-      }
-      
-      .poppins-bold-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-style: italic;
-      }
-      
-      .poppins-extrabold-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-style: italic;
-      }
-      
-      .poppins-black-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-style: italic;
-      }
+.poppins-thin, .poppins-extralight, .poppins-light, .poppins-regular, .poppins-medium, .poppins-semibold, .poppins-bold, .poppins-extrabold, .poppins-black,
+.poppins-thin-italic, .poppins-extralight-italic, .poppins-light-italic, .poppins-regular-italic, .poppins-medium-italic, .poppins-semibold-italic, .poppins-bold-italic, .poppins-extrabold-italic, .poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+}
 
 .bgColor{
-    background-color: #BCA37F
+  background-color: rgb(10, 78, 101);/*#BCA37F*/
 }
 
 .navbar{
-    display: flex;
-    font-size: 1rem ;
-    padding: 1rem;
-    justify-content: space-evenly;
-    text-align: center;
+  display: flex;
+  font-size: 1rem;
+  padding: 1rem;
+  justify-content: space-evenly;
+  text-align: center;
 }
 .navbar-brand{
   margin-left: 5%;
   font-size:50%;
 }
- .navbar-nav{
+.navbar-nav{
   margin-right: 3%;
-} 
-
-
-ul.dropdown-menu{
-  background-color: #BCA37F; /* Cambia al color de fondo deseado */
 }
 
-.a{
-    text-decoration: none;
-    color: white;
+ul.dropdown-menu{
+  background-color: rgb(10, 78, 101);/*#BCA37F*/
+}
 
+a{
+  text-decoration: none;
+  color: white;
 }
 
 h2{
@@ -157,10 +53,7 @@ h2{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.cabeceraTabla h2 {
-  color: white;
+  padding: 0 1rem;
 }
 
 #filaEntradaDatos {
@@ -175,8 +68,8 @@ h2{
 
 .btn-agregar-menu {
   padding: 10px;
-  background-color:#008000; /* Cambia el color de fondo según tus preferencias */
-  color: white; /* Cambia el color del texto para que sea visible */
+  background-color: #008000;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -191,9 +84,9 @@ h2{
   color: white; /* Texto en color blanco para mayor contraste */
   border-radius: 5px;
 }
-.btn-editar-menu{
-  background-color:#ffff00;
-  color:black;
+.btn-editar-menu {
+  background-color: #ffff00;
+  color: black;
   margin-right: 3px;
   border-radius: 5px;
 }
@@ -201,9 +94,10 @@ h2{
 .tabla-contenedor {
   width: 100%;
   margin: 1% auto;
-  background-color:rgba(95, 158, 160, 0.75);
+  background-color: rgba(95, 158, 160, 0.75);
   border-radius: 10px;
   overflow: hidden;
+  padding: 1rem;
 }
 
 .tabla-contenedor table {
@@ -219,7 +113,7 @@ h2{
 }
 
 .tabla-contenedor th {
-  background-color: rgba(31, 58, 104,0.75);
+  background-color: rgba(31, 58, 104, 0.75);
   color: white;
 }
 
@@ -234,11 +128,35 @@ h2{
   display: table;
   width: 100%;
   table-layout: fixed;
-  color:white;
+  color: white;
 }
 
 .tabla-contenedor tbody tr:hover {
-  background-color: rgba(245, 245, 245,0.75);
+  background-color: rgba(245, 245, 245, 0.75);
   color: black;
 }
 
+@media (max-width: 768px) {
+  .cabeceraTabla {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .navbar-brand {
+      font-size: 1.5rem;
+      margin-left: 0;
+  }
+
+  .navbar-nav {
+      margin-right: 0;
+  }
+
+  .cabeceraTabla h2 {
+      font-size: 1.5rem;
+  }
+
+  .btn-agregar-menu {
+      padding: 8px;
+      font-size: 0.875rem;
+  }
+}

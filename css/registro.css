@@ -5,46 +5,51 @@ body {
     background-image: url(../assets/imagenes/Bodegon01.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
+
+html, body {
+    height: 100%;
+}
+
 form {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    /*width:35%;*/
+    width: 100%;
     margin: auto;
 }
 
-.login-container,.register-container {
-    width: 400px;
-    margin: 0 auto;
+.login-container, .register-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgba(
-      249,
-      249,
-      249,
-      0.75
-    );
+    background-color: rgba(249, 249, 249, 0.75);
     font-weight: bold;
+    box-sizing: border-box;
 }
 
-.login-container h2 {
+h2 {
     text-align: center;
 }
 
-.login-container input[type="text"],
-.login-container input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
 }
 
-
-.login-container input[type="submit"] {
+input[type="submit"]{
     width: 100%;
     padding: 10px;
     border: none;
@@ -53,90 +58,57 @@ form {
     color: white;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
-}
-
-
-.login-container input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-.forgot-password {
     text-align: center;
+    text-decoration: none;
+    box-sizing: border-box; /* Añadir esto para que el padding esté incluido en el tamaño del botón */
 }
 
-
-.register-container h2 {
-    text-align: center;
-}
-
-.register-container input[type="text"],
-.register-container input[type="email"],
-.register-container input[type="password"]{
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-}
-.register-container select {
-    width: 105%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-}
-
-.register-container input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-}
-
-.register-container input[type="submit"]:hover {
-    background-color: #45a049;
-}
-/* .cbpreguntas{
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-} */
-
-.btn-cancelar{
-    margin-top: 10px;
-    text-align: center;
-    width: 95%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f80505;
-    color: rgb(248, 245, 245);
-    cursor: pointer;
-}
 .btn-cancelar a {
-    text-decoration: none; /* Esta línea evita la subrayado del enlace */
-    color: rgb(248, 245, 245); /* Agregar esta regla para restaurar el color original del texto */
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 39.5%;
+    padding-right: 39.5%;
+    border: none;
+    border-radius: 5px;
+    background-color:  #f80505;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box; /* Añadir esto para que el padding esté incluido en el tamaño del botón */
+}
+input[type="submit"]:hover{
+    background-color: #45a049;
 }
 
-.btn-cancelar:hover{
-    background-color:#e60303;
+.btn-cancelar {
+    margin-top: 20px;
 }
-.btn-cancelar:hover {
+
+.btn-cancelar a {
+    background-color: #f80505;
+}
+
+.btn-cancelar a:hover {
     background-color: #e60303;
-    color: rgb(248, 245, 245); /* Cambiar el color del texto al pasar el mouse */
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
+@media (max-width: 600px) {
+    .register-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        padding: 8px;
+    }
+
+    input[type="submit"]{
+        padding: 10px; /* Ajustar el padding del botón rojo */
+    }
 }

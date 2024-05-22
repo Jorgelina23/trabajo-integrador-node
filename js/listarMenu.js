@@ -24,7 +24,7 @@ class Menu {
 }
 
 let usuarioEncontrado = new Usuario();
-let reservasRegistradas = [];
+let menuesRegistrados = [];
 
 window.addEventListener('DOMContentLoaded', function() {
     const usuarioEncontradoString = localStorage.getItem('usuarioEncontrado');
@@ -93,7 +93,7 @@ function cargarTablaMenues() {
     let tbody = tablaMenues.querySelector('tbody');
     tbody.innerHTML = '';
 
-    reservasRegistradas.forEach(menu => {
+    menuesRegistrados.forEach(menu => {
         let fila = document.createElement('tr');
 
         Object.keys(menu).forEach(key => {
@@ -196,4 +196,3 @@ function cambiarFondo() {
     elemento.style.backgroundPosition = "center"; // Centra la imagen en el div
     elemento.style.height = "100vh"; // Ajusta la altura del div si es necesario
 }
-
