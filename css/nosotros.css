@@ -107,7 +107,7 @@
     background-color: #2050CB;
     border-radius: 10px;
     margin-top: 10px;
-    background-image: url(./img/index/fondoPantalla04.jpeg);
+    background-image: url(../assets/imagenes/Logo/Logo01.jpeg);
     background-size: contain;
 }
 
@@ -165,4 +165,21 @@
     border-radius: 10px;
     width: 400px;
     height: 200px;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(0); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1); /* Ampliar al 150% */
+    }
+    100% {
+        transform: scale(0); /* Volver al tamaño original */
+    }
+}
+
+.imagen-logo{
+    width: 100%;
+    height: auto;
+    animation: zoom 8s infinite;
 }
