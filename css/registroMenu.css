@@ -2,53 +2,56 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
-    background-image: url(../assets/imagenes/Bodegon01.jpeg);
+    background-image: url(../assets/imagenes/Bodegon02.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 50% 17%;
+    margin: 0;
+    padding: 0;
 }
+
+html, body {
+    height: 100%;
+}
+
 form {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    /*width:35%;*/
+    width: 90%;
+    max-width: 400px;
     margin: auto;
 }
 
 .register-container {
-    width: 400px;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgba(
-      249,
-      249,
-      249,
-      0.75
-    );
+    background-color: rgba(249, 249, 249, 0.75);
     font-weight: bold;
+    box-sizing: border-box;
 }
 
-.register-container h2 {
+h2 {
     text-align: center;
 }
 
-.register-container input[type="text"],
-.register-container input[type="file"],
-.register-container textarea {
+input[type="text"],
+input[type="file"],
+textarea {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
-}
-.register-container label{
-    display: flex;
-    align-self: start;
+    box-sizing: border-box;
 }
 
-.register-container input[type="submit"] {
+input[type="submit"]{
     width: 100%;
     padding: 10px;
     border: none;
@@ -57,44 +60,58 @@ form {
     color: white;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box; /* Añadir esto para que el padding esté incluido en el tamaño del botón */
 }
 
-
-.register-container input[type="submit"]:hover {
+.btn-cancelar a {
+    width: 100%;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 34.5%;
+    padding-right: 34.5%;
+    border: none;
+    border-radius: 5px;
+    background-color:  #f80505;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box; /* Añadir esto para que el padding esté incluido en el tamaño del botón */
+}
+input[type="submit"]:hover{
     background-color: #45a049;
 }
 
-
-.register-container h2 {
-    text-align: center;
+.btn-cancelar {
+    margin-top: 20px;
 }
 
-.btn-cancelar{
-    margin-top: 10px;
-    text-align: center;
-    width: 95%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f80505;
-    color: rgb(248, 245, 245);
-    cursor: pointer;
-}
 .btn-cancelar a {
-    text-decoration: none; /* Esta línea evita la subrayado del enlace */
-    color: rgb(248, 245, 245); /* Agregar esta regla para restaurar el color original del texto */
+    background-color: #f80505;
 }
 
-.btn-cancelar:hover{
-    background-color:#e60303;
-}
-.btn-cancelar:hover {
+.btn-cancelar a:hover {
     background-color: #e60303;
-    color: rgb(248, 245, 245); /* Cambiar el color del texto al pasar el mouse */
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
+@media (max-width: 600px) {
+    .register-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        padding: 8px;
+    }
+
+    input[type="submit"]{
+        padding: 10px; /* Ajustar el padding del botón rojo */
+    }
 }
