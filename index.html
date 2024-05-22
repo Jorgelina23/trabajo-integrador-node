@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./assets/imagenes/Favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/nosotros.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -38,9 +39,6 @@
               <a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="./pages/Nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-white" href="./pages/Reservas.html" id="reservaLink">Reservas</a>
             </li>
             <li class="nav-item">
@@ -68,6 +66,15 @@
       </div>
     </nav>
   </header>
+  <!--<main>
+   <section>
+    <div class="image-container">
+      <img src="./assets/imagenes/Bodegon01.jpeg" alt="bodegon">
+      <a href="./pages/Reservas.html" class="overlay-button">Reservar </a>
+    </section>
+
+  </main>
+-->
   <main class="main">
     <section class="carousel-container">
       <div class="carrusel">
@@ -77,40 +84,29 @@
               aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
               aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
+            
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active ">
-              <img src="./assets/imagenes/platillosArgentinos.jpg" class="d-block w-100 " alt="ASADO">
+              <img src="./assets/imagenes/Bodegon02.jpeg" class="d-block w-100 " alt="ASADO">
               <div class="carousel-caption d-none d-md-block ">
-                <h5>ASADO</h5>
-                <p> En nuestro bodegón, el asado es todo un arte, y cada corte de carne es seleccionado con esmero para
-                  garantizar la máxima calidad y frescura. Desde tiernos cortes de vacío y jugosos chorizos hasta
-                  suculentas costillas de cerdo, cada bocado es una explosión de sabores tradicionales que te
-                  transportará
-                  a las pampas argentinas.</p>
+              <a href="./pages/Reservas.html" class="overlay-button">Reservar </a>
+                
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="./assets/imagenes/italianRavioli.jpg" class="d-block w-100" alt="RAVIOLES">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>RAVIOLES DE CORDERO </h5>
-                <p>Rellenos con una mezcla suculenta de cordero sazonado y envueltos en pasta fresca, cada bocado es una
-                  explosión de sabor. Acompañados de una deliciosa salsa casera, nuestros ravioles de cordero son la
-                  combinación perfecta de tradición y exquisitez que no querrás perderte.</p>
+            <div class="carousel-item desenfoque">
+              <img src="./assets/imagenes/bodegon.jpg" class="d-block w-100" alt="RAVIOLES">
+              <div class="textoSuperpuesto">
+                <h3 class="center ">Nuestra historia</h3>
+                <p>En 1931, Tito, un italiano lleno de sueños, llegó a Argentina buscando un nuevo comienzo. Fascinado
+                  por la cultura argentina, se estableció en el colorido barrio de La Boca. En 1978, tras décadas de
+                  trabajo, Tito abrió "Lo de Tito", un bodegón que rápidamente se convirtió en un ícono del barrio.
+                  Ofreciendo recetas italianas tradicionales y una ambientación nostálgica, "Lo de Tito" se convirtió en
+                  un lugar querido por todos. Hoy, su legado vive a través de su deliciosa comida y su cálida
+                  hospitalidad, recordando siempre los inicios humildes de un hombre que convirtió un sueño en realidad.
+                </p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="./assets/imagenes/ñoquis.jpeg" class="d-block w-100" alt="ñoquis">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>ÑOQUIS</h5>
-                <p>Hechos a mano con ingredientes frescos y amor, son suaves y esponjosos, perfectos para absorber los
-                  ricos jugos del estofado. La carne tierna y las verduras frescas se combinan en un estofado sabroso,
-                  cocinado a fuego lento para garantizar una textura tierna y un sabor profundo.</p>
-              </div>
-            </div>
-          </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -124,16 +120,83 @@
         </div>
       </div>
     </section>
-    <footer class="foot">
-      <ul class="lista">
-        <li><a class=" a" href=""><i class="fab fa-instagram"></i> Instagram</a></li>
-        <li><a class=" a" href=""><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-        <li><a class=" a" href="">Politicas de reservas</a></li>
-        <li><a class=" a" href="./">Contactanos</a></li>
-      </ul>
-    </footer>
-    <script src="./js/carousel.js"></script>
+
+    <section class="section margen poppins-light">
+      <h2>Nuestros platos</h2>
+      <div class="card-container">
+          <div class="card">
+              <img src="./assets/imagenes/Menu/asado_de_cerdo.jpg" alt="asado de cerdo">
+              <div class="content">
+                  <h3>ASADO DE CERDO</h3>
+                  <p>Asado de cerdo con papas fritas o ensalada</p>
+                  <p>$4.000</p>
+              </div>
+          </div>
+          <div class="card">
+              <img src="./assets/imagenes/Menu/chorizo_pomarola.jpg" alt="chorizo a la pomarola">
+              <div class="content">
+                  <h3>CHORIZO A LA POMAROLA </h3>
+                  <p>Chorizo a la pomarola con pure o papas fritas</p>
+                  <p>$4.000</p>
+              </div>
+          </div>
+          <div class="card">
+              <img src="./assets/imagenes/Menu/churrasco_ternera.jpg" alt="churrasco de ternera">
+              <div class="content">
+                  <h3>CHURRASCO DE TERNERA </h3>
+                  <p>churrasco de ternera con guarnicion a gusto </p>
+                  <p>$4.000</p>
+              </div>
+          </div>
+          <div class="card">
+            <img src="./assets/imagenes/italianRavioli.jpg" alt="ravioles">
+            <div class="content">
+                <h3>RAVIOLES DE CORDERO</h3>
+                <p>Ravioles de cordero con salsa de la casa </p>
+                <p>$4.000</p>
+            </div>
+        </div>
+        <div class="card">
+          <img src="./assets/imagenes/ñoquis.jpeg" alt="ñoquis">
+          <div class="content">
+              <h3>ÑOQUIS </h3>
+              <p> Ñoquis de papa con salsa  a gusto </p>
+              <p>$4.000</p>
+          </div>
+      </div>
+      <div class="card">
+        <img src="./assets/imagenes/platillosArgentinos.jpg" alt="asado">
+        <div class="content">
+            <h3>ASADO </h3>
+            <p> Asado para dos con guarnicion a gusto </p>
+            <p>$4.000</p>
+        </div>
+    </div>
+      </div>
+  </section>
   </main>
+
+  <footer>
+    <div class="container-footer">
+      <div class="imagen-footer">
+        <img class="imagen-logo" src="./assets/imagenes/" alt="Logo HealthAPP">
+      </div>
+      <div class="texto-footer">
+        <br>
+        <p><strong>Lo de Tito</strong> Derechos © Reservados Año 2024 </p>
+        <ul>
+          <li><strong>E-mail:</strong><a href="lodetito@gmail.com"> infolodetito@gmail.com</a></li>
+          <li><strong>Dirección:</strong> Martin Rodriguez 520 </li>
+          <li><strong>Localidad:</strong> Ciudad Autonoma de Buenos Aires</li>
+          <li><strong>Código Postal:</strong> C1159ADD</li>
+          <li><strong>Pais:</strong> Argentina</li>
+        </ul>
+      </div>
+      <div class="mapa-footer">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.867146108848!2d-58.36472442452317!3d-34.632797459034066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b7c6e416e9%3A0xdb9ff7bc40618ede!2sMart%C3%ADn%20Rodr%C3%ADguez%20520%2C%20C1159ADD%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712111520613!5m2!1ses-419!2sar" width="280" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
