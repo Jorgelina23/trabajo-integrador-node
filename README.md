@@ -23,3 +23,10 @@ index.html (index.css), registro_usuario.html(registro.css),nuevo_usuario.html(u
 /-------------------------------------------------------------------------------------------------
 Cambiar cuando inicie como usuario el navbar que no salga inicio de sesion y Registro
 Cambiar cuando ingreso como usuario cambiar los link registro, 
+
+/----------------------------------------------------------------------------------------------
+25/05/2024 Correcciones:
+Index.html: 
+1- Nuestra Historia ===> Al achicar se pierde el texto.
+2- Arreglar footer ===> No se adapta a la pantalla.
+3- Boton Reserva ==> No debe aparecer sino esta logueado.

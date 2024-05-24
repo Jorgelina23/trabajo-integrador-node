@@ -7,7 +7,9 @@ body{
   background-image: url(../assets/imagenes/Bodegon01.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top center;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 /*css fuente*/
@@ -17,7 +19,7 @@ body{
 }
 
 .bgColor{
-  background-color: rgb(10, 78, 101);/*#BCA37F*/
+  background-color: #BCA37F;
 }
 
 .navbar{
@@ -36,7 +38,7 @@ body{
 }
 
 ul.dropdown-menu{
-  background-color: rgb(10, 78, 101);/*#BCA37F*/
+  background-color: #BCA37F;
 }
 
 a{
@@ -93,7 +95,7 @@ h2{
 
 .tabla-contenedor {
   width: 100%;
-  margin: 1% auto;
+  margin: 2% auto;
   background-color: rgba(95, 158, 160, 0.75);
   border-radius: 10px;
   overflow: hidden;
@@ -108,7 +110,7 @@ h2{
 
 .tabla-contenedor th, .tabla-contenedor td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
@@ -129,11 +131,30 @@ h2{
   width: 100%;
   table-layout: fixed;
   color: white;
+  font-size: 1.4vw;
 }
 
 .tabla-contenedor tbody tr:hover {
   background-color: rgba(245, 245, 245, 0.75);
   color: black;
+}
+
+.imagen-menu {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .imagen-menu {
+    width: 80%; /* Cambia el ancho en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 400px) {
+  .imagen-menu {
+    width: 60%; /* Cambia el ancho en pantallas muy pequeñas */
+  }
 }
 
 @media (max-width: 768px) {

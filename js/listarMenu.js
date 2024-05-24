@@ -103,8 +103,9 @@ function cargarTablaMenues() {
                     let img = document.createElement('img');
                     img.src = menu.imagen;
                     img.alt = 'Imagen del menú';
-                    img.style.maxWidth = '100px';
+                    img.style.maxWidth = '150px';
                     cell.appendChild(img);
+                    img.classList.add('imagen-menu');
                 } else {
                     cell.textContent = menu[key];
                 }

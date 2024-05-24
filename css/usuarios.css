@@ -7,7 +7,9 @@ body{
   background-image: url(../assets/imagenes/Bodegon01.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top center;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 /*css fuente*/
@@ -17,7 +19,7 @@ body{
 }
 
 .bgColor{
-  background-color: rgb(10, 78, 101);/*#BCA37F*/
+  background-color: #BCA37F;
 }
 
 .navbar{
@@ -36,7 +38,7 @@ body{
 }
 
 ul.dropdown-menu{
-  background-color: rgb(10, 78, 101); /*#BCA37F*/
+  background-color: #BCA37F;
 }
 
 a{
@@ -48,7 +50,7 @@ h2{
   color: white !important;
 }
 .cabeceraTabla {
-  margin-top: 3%;
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -115,6 +117,7 @@ h2{
 .tabla-contenedor th {
   background-color: rgba(31, 58, 104, 0.75);
   color: white;
+  font-size: 1vw;
 }
 
 /* Limita la altura de la tabla y permite el desplazamiento */
@@ -129,6 +132,7 @@ h2{
   width: 100%;
   table-layout: fixed;
   color: white;
+  font-size: 1.15vw;
 }
 
 .tabla-contenedor tbody tr:hover {
