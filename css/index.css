@@ -315,34 +315,64 @@ ul.dropdown-menu{
    }
   }
 
-  @media screen and (max-width: 400px){
+  @media screen and (max-width: 600px){
     .carousel-caption{
       height: auto;
       align-items: center;
      
    }
-  .textoSuperpuesto{
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  color:#EAD7BB; 
-  text-align: center; 
-  background: linear-gradient( rgba(94, 45, 5, 0.5), rgba(0,0,0,0.8));
-  padding: 20px;
-  font-family: "Poppins", sans-serif;
-  font-style: italic;
-
+  
+   h3{
+    font-size: 12px;
    }
-
-
-
-
-
-
-
-
-
-
-
+  .textoSuperpuesto{
+    width: 80%;
   }
+
+  .container-footer{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 100px;
+    background-color: #2050CB;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-image: url(../assets/imagenes/Logo/Logo01.jpeg);
+    background-size: contain;
+}
+
+.texto-footer{
+  background-color: rgba(
+    145,
+    140,
+    140,
+    0.75
+  );
+  width: 80%;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  width: 1100px;
+  height: 200px;
+  color:aliceblue;
+  text-align: justify;
+  
+  position:relative; 
+  padding: 0 25px;
+  text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+  
