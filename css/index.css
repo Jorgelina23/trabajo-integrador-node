@@ -377,7 +377,9 @@ color: #333;
   background-color: rgb(10, 78, 101);
   border-radius: 10px;
   margin-top: 10px;
-  align-items: stretch; /* Cambiado a 'stretch' para igualar alturas */
+  background-image: url(../assets/imagenes/Logo/Logo01.jpeg);
+  background-size: contain;
+  /*align-items: stretch; Cambiado a 'stretch' para igualar alturas */
   top:50%;
 }
 
