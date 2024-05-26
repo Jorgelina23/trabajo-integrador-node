@@ -7,26 +7,25 @@
     <link rel="shortcut icon" href="../assets/imagenes/Favicon.png" type="image/x-icon" >
     <title>Bodegón | Lo de Tito</title>
     <link rel="stylesheet" href="../css/reservas.css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" >
 </head>
 
 <body>
     <header class="header">
         <!--navegador, en el encontraremos los enlaces hacia los diferentes paginas del proyecto. En el primer div: el nombre del bodegon, en el segundo div agrupados los enlaces dentro de una lista desordenada-->
-        <h1 class="header-title">Bodegon "Lo de Tito"</h1>
+        <h1 class="header-title">Bodegon <a href="../index.html">"Lo de Tito"</a></h1>
         <nav class="nav">
             <ul class="nav-links">
                 
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Nosotros.html">Nosotros</a></li>
                     <li><a href="Reservas.html">Reservas</a></li>
-                
+                    <li><a class="nav-link " href="#" id="closeLink">Cerrar Sesion</a></li>
             </ul>
-            <div>
-                <a class="nav-link text-white" href="#" id="closeLink">Cerrar Sesion</a>
-            </div>
+            <button id="show-menu"><img src="../assets/imagenes/menu.png" alt="Menu hamburguesa"></button>
+            <ul class="nav-links_mobile" id="menu-mobile">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Reservas.html">Reservas</a></li>
+                <li><a class="nav-link " href="#" id="mobileCloseLink">Cerrar Sesion</a></li>
+            </ul>
         </nav>
     </header>
     <main class="container">
@@ -58,14 +57,13 @@
                             <option value="4">Mesa 5</option>
                             <option value="5">Mesa 6</option>
                         </select>
-                        <i class="fa-solid fa-chevron-down"></i>
                     
                 </label>
                 <h3>Elegí tu plato</h3>
                 <div class="foodSelector">
                     
-                            <div>
-                                <div>
+                            <div id="menuSelector">
+                            <!--<div>
                                     <input type="radio" name="foodSelector" id="food1" value="Asado" >
                                     <label for="food1">
                                         <span>Asado</span>
@@ -114,6 +112,8 @@
                                         <img src="../assets/imagenes/osobuco_braseado.jpg" alt="Osobuco braseado" >
                                     </label>
                                 </div>
+
+                            -->
                             </div>
                             
                 </div>
@@ -146,7 +146,7 @@
                         <div class="choices">
                             <input type="radio" id="me" name="personChoice" value="Yo" >
                             <label for="me">Yo</label>
-
+                            <br/>
                             <input type="radio" id="another" name="personChoice" value="Otra persona" >
                             <label for="another">Otra persona</label>
                         </div>
@@ -168,6 +168,22 @@
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <section class="footer-info">
+            <h3>Lo de Tito <br> Derechos © Reservados <small>Año 2024</small></h3>
+            <ul>
+                <li>E-mail: <a href="#">infolodetito@gmail.com</a></li>
+                <li>Dirección: Martín Rodriguez 520</li>
+                <li>Localidad: Palermo, Ciudad Autonoma de Buenos Aires </li>
+                <li>Codigo Postal: C1159ADD</li>
+                <li>País: Argentina</li>
+            </ul>
+            
+        </section>
+        <section class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.867146108848!2d-58.36472442452317!3d-34.632797459034066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b7c6e416e9%3A0xdb9ff7bc40618ede!2sMart%C3%ADn%20Rodr%C3%ADguez%20520%2C%20C1159ADD%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712111520613!5m2!1ses-419!2sar" width="180" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </footer>
     <script src="../js/reservas.js"></script>
 </body>
 
