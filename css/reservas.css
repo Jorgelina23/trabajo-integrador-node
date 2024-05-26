@@ -304,8 +304,8 @@ select {
             align-items: center;
             margin: 1rem 0;;
             background-image: url("../assets/imagenes/Logo/Logo03.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-repeat:repeat;
+            background-size: contain;
             .footer-info{
                 width: 90%;
                 margin: auto;
@@ -315,10 +315,11 @@ select {
                 margin-bottom: .5rem;
                 h3{
                     text-align: center;
+                    font-size: 10px;
                 }
                 ul{
+                    padding: 1rem;
                     li{
-                        list-style: none;
                         font-size: 12px;
                         a{
                             color: #BCA37F;
