@@ -69,7 +69,7 @@ select {
         .header {
             width: 100%;
             display: flex;
-            background: linear-gradient(to bottom, #113946,#113946, transparent);
+            background: linear-gradient(to bottom, #BCA37F, transparent);
             padding: 1rem;
 
             h1 {
