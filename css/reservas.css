@@ -297,6 +297,7 @@ select {
         }
         .footer{
             width: 100%;
+            padding: 2rem 0;
             height: max-content;
             display: flex;
             flex-direction: column;
@@ -328,8 +329,8 @@ select {
                 }
             }
             .footer-map{
-                width: 180px;
-                height: 180px;
+                width: 450px;
+                height: 240px;
                 border: 3px solid #06475d;
                 overflow: hidden;
                 margin: auto;
@@ -340,7 +341,7 @@ select {
 
 @media screen and (min-width: 801px) {
     body {
-        width: 100vw;
+        width: 99vw;
         height: 100%;
         overflow-x: hidden;
         background-image: url("../assets/imagenes/Bodegon01.jpeg");
@@ -585,18 +586,18 @@ select {
         }
         .footer{
             width: 100%;
-            height: max-content;
+            height: 17rem;
             margin: 1rem 0;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background-image: url("../assets/imagenes/Logo/Logo03.jpeg");
-            background-repeat: no-repeat;
+            background-image: url("../assets/imagenes/Logo/Logo01.jpeg");
+            background-repeat: repeat;
             background-size: cover;
             .footer-info{
                 padding: 1rem;
-                width: 70%;
-                background-color: #0b1d23d4;
+                width: 40%;
+                background-color: #0b1d2396;
                 border-radius: 20px;
                 color: #FFF2D8;
                 margin-bottom: .5rem;
@@ -606,7 +607,7 @@ select {
                 ul{
                     li{
                         list-style: none;
-                        font-size: 12px;
+                        font-size: 16px;
                         a{
                             color: #BCA37F;
                         }
@@ -615,7 +616,8 @@ select {
             }
             .footer-map{
                 overflow: hidden;
-                height: 200px;
+                width: 450px;
+                height: 240px;
                 border: 3px solid #06475d;
             }
         }
