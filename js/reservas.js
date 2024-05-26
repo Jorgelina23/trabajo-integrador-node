@@ -1,7 +1,11 @@
 let formData = document.getElementById('form');
 let tables = document.querySelectorAll('.table')
-document.querySelector('.dateSelector').addEventListener('change', ()=> {
-    disponibilidadMesas()
+let selectorMenu = document.getElementById('menuSelector')
+let platos = JSON.parse(localStorage.getItem('menuesRegistrados'))
+let showMenu = document.getElementById('show-menu');
+let menuMobile = document.getElementById('menu-mobile')
+showMenu.addEventListener('click', ()=>{
+    menuMobile.classList.toggle('open');
 })
 
 class Reserva {
@@ -20,6 +24,8 @@ class Reserva {
 let mesasDisponibles = [...tables]
 console.log(mesasDisponibles)
 
+
+
 function obtenerValorSeleccionado(elements, msj) {
     for (let i = 0; i < elements.length; i++) {
         if (elements[i].checked) {
@@ -29,16 +35,34 @@ function obtenerValorSeleccionado(elements, msj) {
     return alert(msj); // Si ningún elemento está seleccionado
 }
 
-const closeLink = document.getElementById("closeLink");
-    closeLink.addEventListener("click", e => {
+const desktopClose = document.getElementById("closeLink");
+const mobileClose = document.getElementById('mobileCloseLink');
+const closeLink = (close)=> {
+    close.addEventListener("click", e => {
         e.preventDefault();
         limpiarUsuario();
         window.location.href = "../index.html";
     });
+}
+
+closeLink(desktopClose)
+closeLink(mobileClose)
+
+
 
 function limpiarUsuario() {
         localStorage.removeItem('usuarioEncontrado');
     }
+
+function cargarMesas(){
+    tables.forEach(table => {
+        table.innerHTML = `Selecciona una fecha`
+    })
+}
+
+document.querySelector('.dateSelector').addEventListener('change', ()=> {
+    disponibilidadMesas()
+})
 
 function disponibilidadMesas(){
     
@@ -72,14 +96,31 @@ function limpiarCampos(){
     }
 }
 
+function cargarMenuSelector(){
+    platos.map(plato => {
+        let htmlPlato = `
+        <div>
+            <input type="radio" name="foodSelector" id="food${plato.id}" value="${plato.nombre}" >
+            <label for="food${plato.id}">
+                <span>${plato.nombre}</span>
+                <img src="../assets/imagenes/Menu/${plato.nombre}.jpg" alt="Asadito" >
+                <span>${plato.precio}</span>
+            </label>
+        </div>
+        `
+        selectorMenu.innerHTML += htmlPlato
+    })
+}
+
 
 window.addEventListener('DOMContentLoaded', ()=>{
+    cargarMesas();
     let usuarioEncontrado = JSON.parse(localStorage.getItem('usuarioEncontrado'))
     
     document.getElementById('name').value = usuarioEncontrado.nombre
     document.getElementById('email').value = usuarioEncontrado.email;
 
-    disponibilidadMesas()
+    cargarMenuSelector();
 })
 
 
