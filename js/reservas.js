@@ -98,17 +98,24 @@ function limpiarCampos(){
 
 function cargarMenuSelector(){
     platos.map(plato => {
+        let img = document.createElement('img');
+                    img.src = plato.imagen;
+                    img.alt = 'Imagen del menú';
+                    img.style.maxWidth = '150px';
+        console.log(img)
         let htmlPlato = `
+        
         <div>
             <input type="radio" name="foodSelector" id="food${plato.id}" value="${plato.nombre}" >
             <label for="food${plato.id}">
                 <span>${plato.nombre}</span>
-                <img src="../assets/imagenes/Menu/${plato.nombre}.jpg" alt="Asadito" >
+                
                 <span>${plato.precio}</span>
             </label>
         </div>
         `
         selectorMenu.innerHTML += htmlPlato
+        selectorMenu.appendChild(img)
     })
 }
 
