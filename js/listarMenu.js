@@ -94,6 +94,7 @@ function cargarTablaMenues() {
     tbody.innerHTML = '';
 
     menuesRegistrados.forEach(menu => {
+        console.log(menu)
         let fila = document.createElement('tr');
 
         Object.keys(menu).forEach(key => {
