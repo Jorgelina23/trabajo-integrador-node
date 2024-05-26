@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const adminDropdown = document.getElementById("adminDropdown");
         const reservaLink = document.getElementById("reservaLink");
         const closeLink = document.getElementById("closeLink");
+        const reservaboton = document.getElementById("reservaBoton");
 
         // Ocultar todos los elementos primero
         loginLink.style.display = "none";
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         adminDropdown.style.display = "none";
         reservaLink.style.display = "none";
         closeLink.style.display = "none";
+        reservaboton.style.display="none";
 
         if (tipoUsuario === "admin") {
             adminDropdown.style.display = "block"; // Mostrar el menú de administrador
@@ -46,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (usuarioEncontrado && usuarioEncontrado.isLogueado) {
                 reservaLink.style.display = "block"; // Mostrar el enlace de reserva solo si está logueado
                 closeLink.style.display = "block";
+                reservaboton.style.display="block";
                 loginLink.style.display = "none"; // Oculta el botón de iniciar sesión
                 registerLink.style.display = "none"; // Oculta el botón de registrarse
             }
