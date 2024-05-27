@@ -16,7 +16,7 @@ class Reserva {
         this.table = (parseInt(table) + 1),
         this.food = food,
         this.date = date,
-        this.horario = horario
+        this.horario = horario,
         this.person = person
     }
 }
@@ -102,7 +102,6 @@ function cargarMenuSelector(){
                     img.src = plato.imagen;
                     img.alt = 'Imagen del menú';
                     img.style.maxWidth = '150px';
-        console.log(img)
         let htmlPlato = `
         
         <div>
@@ -166,7 +165,7 @@ const guardarReserva = reserva => {
 
     localStorage.setItem('reservas', JSON.stringify(listaReservas));
 }
-
+console.log(document.getElementsByName('foodSelector'))
 formData.addEventListener('submit', (e) => {
     
     let fullName = document.getElementById('name').value

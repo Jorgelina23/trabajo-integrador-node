@@ -20,11 +20,13 @@ class UsuarioLogueado {
     }  
 }
 
+let menuesRegistrados = JSON.parse(localStorage.getItem('menuesRegistrados'))
+
 let usuario = new UsuarioLogueado()
 let reservas = []
 
 window.addEventListener('DOMContentLoaded', ()=> {
-
+    console.log(menuesRegistrados)
     // Limpiar todas las reservas de la base de datos
     document.getElementById('reservas-clear').addEventListener('click', ()=> {
         let confirmado = confirm('Seguro quieres eliminar TODAS las reservas?')
@@ -45,15 +47,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
         tipoUsuario = usuario.tipoDeUsuario;
     }
     const reservasString = localStorage.getItem('reservas')
-    console.log(reservasString)
+    
     if(reservasString){
         const reservasRegistradas = JSON.parse(reservasString)
         reservasRegistradas.map(reserva => {
-            console.log(reservasRegistradas.indexOf(reserva))
+
             let reservacion = new ReservaRegistrada(reservasRegistradas.indexOf(reserva), reserva.fullName, reserva.email, reserva.phone, reserva.date, reserva.horario , reserva.food, reserva.table, reserva.person )
             reservas.push(reservacion)
         })
-        console.log(reservasRegistradas)
+        
     }
 
     mostrarElementosPorTipoUsuario(usuario)
@@ -107,39 +109,23 @@ function cargarTablaReservas() {
             let cell = document.createElement('td');
             cell.style.textAlign = 'center'
 
+            
             if(key === 'food'){
                 let elementoImg = document.createElement('div')
                 elementoImg.style.textAlign = 'center'
                 let img = document.createElement('img');
-                let precio = document.createElement('p')
+                let precio = document.createElement('p');
                 
-    
-                switch(reserva.food){
-                    case 'Empanadas':
-                        img.src = "../assets/imagenes/empanadas.jpg"
-                        precio.textContent = `${reserva.food} $7500`
-                        break;
-                    case 'Osobuco braseado':
-                        img.src = "../assets/imagenes/osobuco_braseado.jpg"
-                        precio.textContent = `${reserva.food} $4500`
-                        break;
-                    case 'Chorizo a la pomarola':
-                        img.src = "../assets/imagenes/chorizo_pomarola.jpg"
-                        precio.textContent = `${reserva.food} $6500`
-                        break;
-                    case 'Asado':
-                        img.src = "../assets/imagenes/platillosArgentinos.jpg"
-                        precio.textContent = `${reserva.food} $12500`
-                        break;
-                    case 'Ñoquis':
-                        img.src = "../assets/imagenes/ñoquis.jpeg"
-                        precio.textContent = `${reserva.food} $3500`
-                        break;
-                    case 'Ravioles de Cerdo':
-                        img.src = "../assets/imagenes/italianRavioli.jpg"
-                        precio.textContent = `${reserva.food} $3500`
-                        break;
-                }
+                menuesRegistrados.forEach(menu => {
+                    if(reserva.food === menu.nombre){
+                        console.log(reserva.food, menu.nombre)
+                        img.src = menu.imagen
+                        precio.textContent = menu.precio
+                    } else {
+                        return
+                    }
+                })
+                
                 img.alt = 'Imagen de la comida';
                 img.style.maxWidth = '100px'
                 img.style.aspectRatio = '16/9';
